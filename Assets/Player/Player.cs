@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,13 +11,13 @@ public class Player : MonoBehaviour {
 	[SerializeField]
 	private float acceleration;
 
-	[SerializeField]
+	private float currentSpeed;
+
 	private Vector2 moveDirection;
 
 	//This will be the delta of the mouse, how quickly we need to turn
 	//x delta needs to be rotated around the y axis
 	//y delta needs to be rotated around the x axis, clamped between -90 & 90
-	[SerializeField]
 	private Vector2 lookDelta;
 
 	private float verticalAngle;
@@ -28,44 +27,110 @@ public class Player : MonoBehaviour {
 	private Vector2 sensitivity;
 
 	[SerializeField]
-	private float jumpForce;
-
-	private Rigidbody body;
-	private Rigidbody cameraBody;
+	private float jumpHeight;
 
 	private Camera view;
 
+	private CharacterController controller;
+
 	[SerializeField]
-	private Vector2 currentVelocity;
+	private float grappleAcceleration;
+	[SerializeField]
+	private float grappleMaxSpeed;
+	private float grappleSpeed;
+
+	private bool grappling;
+	private Transform grapplePoint;
+
+	private bool grounded {
+		get {
+			return controller.isGrounded;
+		}
+	}
+
+	private float VerticalVelocity {
+		get {
+			return velocityVector.y;
+		}
+		set {
+			velocityVector.y = value;
+		}
+	}
+
+	private Vector3 velocityVector = new();
+
+	[SerializeField]
+	private float gravity = -9.8f;
+
+	[SerializeField]
+	private LayerMask worldLayer;
 
 	private void Awake () {
-		body = GetComponent<Rigidbody>();
-		cameraBody = GetComponentInChildren<Rigidbody>();
 		view = GetComponentInChildren<Camera>();
+		controller = GetComponent<CharacterController>();
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 	}
 
-	private void FixedUpdate () {
+	private void Update () {
+		UpdateRotation();
+		UpdateMotion();
+	}
+
+	private void UpdateRotation () {
+		//Reading rotation data from Unity is impractical due to complex Quaternion math
+		//In order to maintain consistency with looking, we need to create or own angles and force Unity to match
+		//Thus we store the angles as separate consistent variables that we send to Unity
 		horizontalAngle += lookDelta.x * sensitivity.x;
 		verticalAngle -= lookDelta.y * sensitivity.y;
 
+		//Don't want to be able to look past each pole, so we clamp
 		verticalAngle = Mathf.Clamp(verticalAngle, -90f, 90f);
 
-		//body.MoveRotation();
-		cameraBody.MoveRotation(Quaternion.Euler(verticalAngle, horizontalAngle, 0));
+		//TODO: come up with smoother mouse movement, lerp somewhere
+		view.transform.localRotation = Quaternion.Euler(verticalAngle, 0, 0);
+		transform.rotation = Quaternion.Euler(0, horizontalAngle, 0);
+	}
 
-		//Get current velocity
-		currentVelocity = body.velocity;
+	private void UpdateMotion () {
+		//Check if grounded to reset vertical movement
+		if (grounded && VerticalVelocity < 0) {
+			VerticalVelocity = 0f;
+		}
+
+		Vector3 forwardsMotion = transform.forward * moveDirection.y;
+		Vector3 horizontalMotion = transform.right * moveDirection.x;
+
+		Vector3 motion = (forwardsMotion + horizontalMotion).normalized;
+
+		if (grappling) {
+			motion = ApplyGrappleMotion(motion);
+		}
 
 		//Add acceleration amount
-		currentVelocity += acceleration * Time.fixedDeltaTime * moveDirection;
+		currentSpeed += acceleration * Time.deltaTime;
 
 		//Clamp the new velocity so it doesn't exceed max speed
-		currentVelocity.x = Mathf.Min(maxMoveSpeed, currentVelocity.x);
-		currentVelocity.y = Mathf.Min(maxMoveSpeed, currentVelocity.y);
+		currentSpeed = Mathf.Min(maxMoveSpeed, currentSpeed);
 
-		body.velocity = new Vector3(currentVelocity.x, 0, currentVelocity.y);
+		controller.Move(motion * currentSpeed * Time.deltaTime);
+
+		if (!grappling) VerticalVelocity += gravity * Time.deltaTime;
+
+		controller.Move(velocityVector * Time.deltaTime);
+	}
+
+	private Vector3 ApplyGrappleMotion (Vector3 motion) {
+		Vector3 grappleDirection = (grapplePoint.transform.position - transform.position).normalized;
+
+		grappleSpeed += grappleAcceleration * Time.deltaTime;
+		grappleSpeed = Mathf.Min(grappleMaxSpeed, grappleSpeed);
+
+		grappleDirection *= grappleSpeed * Time.deltaTime;
+
+		motion += grappleDirection;
+
+		return motion;
 	}
 
 	public void Move (InputAction.CallbackContext context) {
@@ -77,15 +142,27 @@ public class Player : MonoBehaviour {
 	}
 
 	public void Fire (InputAction.CallbackContext context) {
-
+		
 	}
 
 	public void AltFire (InputAction.CallbackContext context) {
-
+		
 	}
 
 	public void Grapple (InputAction.CallbackContext context) {
+		if (context.performed) {
+			Ray ray = new Ray(transform.position, transform.forward);
 
+			if (Physics.Raycast(ray, out RaycastHit hit, 100f, worldLayer)) {
+				grapplePoint = Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), hit.transform.position, Quaternion.Euler(Vector3.zero)).transform;
+				grappling = true;
+			}
+		}
+
+		if (context.canceled) {
+			grappling = false;
+			Destroy(grapplePoint.gameObject);
+		}
 	}
 
 	public void Grab (InputAction.CallbackContext context) {
@@ -97,8 +174,8 @@ public class Player : MonoBehaviour {
 	}
 
 	public void Jump (InputAction.CallbackContext context) {
-		if (context.canceled) {
-			body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+		if (context.performed && grounded) {
+			VerticalVelocity += jumpHeight;
 		}
 	}
 
