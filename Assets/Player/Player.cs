@@ -5,15 +5,68 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour {
 
+	private static Player instance;
+
+	[Header("Movement")]
 	[SerializeField]
-	private float maxMoveSpeed;
+	private float speed;
+
+	[SerializeField] 
+	private float movementMultiplier;
 
 	[SerializeField]
-	private float acceleration;
+	private float airMultiplier;
 
-	private float currentSpeed;
+	[SerializeField]
+	private float jumpForce;
 
-	private Vector2 moveDirection;
+	[SerializeField]
+	private Vector3 direction;
+
+	public Vector3 Direction {
+		get {
+			return direction;
+		}
+	}
+
+	[SerializeField]
+	private Vector3 motion;
+
+	public static Vector3 Motion {
+		get {
+			return instance.motion;
+		}
+	}
+
+	public static Rigidbody Body {
+		get {
+			return instance.body;
+		}
+	}
+
+	private Rigidbody body;
+
+	private Vector2 moveInput;
+	private Vector3 slopeMoveDirection;
+
+	[Header("Camera")]
+	[SerializeField]
+	private Camera view;
+
+	public static Camera ViewPort {
+		get {
+			return instance.view;
+		}
+	}
+
+	[SerializeField]
+	private Vector2 sensitivity;
+
+	[SerializeField]
+	private Transform cameraPos;
+
+	[SerializeField]
+	private Transform orientation;
 
 	//This will be the delta of the mouse, how quickly we need to turn
 	//x delta needs to be rotated around the y axis
@@ -23,56 +76,73 @@ public class Player : MonoBehaviour {
 	private float verticalAngle;
 	private float horizontalAngle;
 
-	[SerializeField]
-	private Vector2 sensitivity;
-
-	[SerializeField]
-	private float jumpHeight;
-
-	private Camera view;
-
-	private CharacterController controller;
-
-	[SerializeField]
-	private float grappleAcceleration;
-	[SerializeField]
-	private float grappleMaxSpeed;
-	private float grappleSpeed;
-
-	private bool grappling;
-	private Transform grapplePoint;
-
-	private bool grounded {
-		get {
-			return controller.isGrounded;
-		}
-	}
-
-	private float VerticalVelocity {
-		get {
-			return velocityVector.y;
-		}
-		set {
-			velocityVector.y = value;
-		}
-	}
-
-	private Vector3 velocityVector = new();
-
-	[SerializeField]
-	private float gravity = -9.8f;
-
+	[Header("Ground Detection")]
 	[SerializeField]
 	private LayerMask worldLayer;
 
+	[SerializeField]
+	private float groundDistance;
+
+	[SerializeField]
+	private float height;
+
+	[SerializeField]
+	private CapsuleCollider bounds;
+
+	[SerializeField]
+	private float slopeFriction;
+
+	[SerializeField]
+	private Transform groundCheck;
+
+	private RaycastHit slopeHit;
+
+	private bool OnSlope {
+		get {
+			if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, height / 2 + 0.5f)) {
+				if (slopeHit.normal != Vector3.up) return true;
+				else return false;
+			}
+			return false;
+		}
+	}
+
+	private bool grounded {
+		get {
+			return Physics.CheckSphere(groundCheck.position, groundDistance, worldLayer);
+		}
+	}
+
+	[Header("Drag")]
+	[SerializeField]
+	private float groundDrag;
+	[SerializeField]
+	private float airDrag;
+
+	[Header("Grappling Hook")]
+	[SerializeField]
+	private float grappleAcceleration;
+
+	[SerializeField]
+	private GameObject hookPrefab;
+
+	private bool grappling;
+	private Transform grapplePoint;
+	private float distance;
+
 	private void Awake () {
-		view = GetComponentInChildren<Camera>();
-		controller = GetComponent<CharacterController>();
+		instance = this;
+		body = GetComponent<Rigidbody>();
+		body.freezeRotation = true;
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 	}
 
 	private void Update () {
+		ControlDrag();
+	}
+
+	private void FixedUpdate () {
 		UpdateRotation();
 		UpdateMotion();
 	}
@@ -88,53 +158,71 @@ public class Player : MonoBehaviour {
 		verticalAngle = Mathf.Clamp(verticalAngle, -90f, 90f);
 
 		//TODO: come up with smoother mouse movement, lerp somewhere
-		view.transform.localRotation = Quaternion.Euler(verticalAngle, 0, 0);
-		transform.rotation = Quaternion.Euler(0, horizontalAngle, 0);
+		view.transform.position = cameraPos.position;
+		orientation.rotation = Quaternion.Euler(verticalAngle, horizontalAngle, 0);
+		view.transform.localRotation = orientation.rotation;
+		
 	}
 
 	private void UpdateMotion () {
-		//Check if grounded to reset vertical movement
-		if (grounded && VerticalVelocity < 0) {
-			VerticalVelocity = 0f;
+		Vector3 forwardsMotion = orientation.forward * moveInput.y;
+		Vector3 horizontalMotion = orientation.right * moveInput.x;
+
+		slopeMoveDirection = Vector3.ProjectOnPlane(forwardsMotion + horizontalMotion, slopeHit.normal);
+
+		Vector3 motionDirection = (forwardsMotion + horizontalMotion).normalized;
+		float motionSpeed = speed * movementMultiplier;
+
+		if (grounded && OnSlope) {
+			motionDirection = slopeMoveDirection.normalized;
+			bounds.material.staticFriction = slopeFriction;
+		}
+		else {
+			bounds.material.staticFriction = 0f;
 		}
 
-		Vector3 forwardsMotion = transform.forward * moveDirection.y;
-		Vector3 horizontalMotion = transform.right * moveDirection.x;
+		if (!grounded) {
+			motionSpeed *= airMultiplier;
+		}
 
-		Vector3 motion = (forwardsMotion + horizontalMotion).normalized;
+		direction = motionDirection;
+
+		motion = direction * motionSpeed;
 
 		if (grappling) {
 			motion = ApplyGrappleMotion(motion);
 		}
 
-		//Add acceleration amount
-		currentSpeed += acceleration * Time.deltaTime;
-
-		//Clamp the new velocity so it doesn't exceed max speed
-		currentSpeed = Mathf.Min(maxMoveSpeed, currentSpeed);
-
-		controller.Move(motion * currentSpeed * Time.deltaTime);
-
-		if (!grappling) VerticalVelocity += gravity * Time.deltaTime;
-
-		controller.Move(velocityVector * Time.deltaTime);
+		body.AddForce(motion, ForceMode.Acceleration);
 	}
 
 	private Vector3 ApplyGrappleMotion (Vector3 motion) {
-		Vector3 grappleDirection = (grapplePoint.transform.position - transform.position).normalized;
+		Vector3 grappleDirection = grapplePoint.transform.position - transform.position;
+		float distanceToAnchor = grappleDirection.magnitude;
 
-		grappleSpeed += grappleAcceleration * Time.deltaTime;
-		grappleSpeed = Mathf.Min(grappleMaxSpeed, grappleSpeed);
+		if (distance < distanceToAnchor) {
+			float velocity = body.velocity.magnitude;
+			Vector3 newDirection = Vector3.ProjectOnPlane(body.velocity, grappleDirection);
+			body.velocity = newDirection.normalized * velocity;
+		}
+		else body.AddForce(grappleDirection.normalized * grappleAcceleration, ForceMode.Acceleration);
 
-		grappleDirection *= grappleSpeed * Time.deltaTime;
+		//grappleDirection = grappleDirection.normalized;
 
-		motion += grappleDirection;
+		motion += grappleDirection.normalized * grappleAcceleration;
 
 		return motion;
 	}
 
+	private void ControlDrag () {
+		if (grounded) {
+			body.drag = groundDrag;
+		}
+		else body.drag = airDrag;
+	}
+
 	public void Move (InputAction.CallbackContext context) {
-		moveDirection = context.ReadValue<Vector2>();
+		moveInput = context.ReadValue<Vector2>();
 	}
 
 	public void Look (InputAction.CallbackContext context) {
@@ -151,17 +239,18 @@ public class Player : MonoBehaviour {
 
 	public void Grapple (InputAction.CallbackContext context) {
 		if (context.performed) {
-			Ray ray = new Ray(transform.position, transform.forward);
+			Ray ray = new(transform.position, orientation.forward);
 
 			if (Physics.Raycast(ray, out RaycastHit hit, 100f, worldLayer)) {
-				grapplePoint = Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), hit.transform.position, Quaternion.Euler(Vector3.zero)).transform;
+				grapplePoint = Instantiate(hookPrefab, hit.point, Quaternion.Euler(Vector3.zero)).transform;
 				grappling = true;
+				return;
 			}
 		}
 
 		if (context.canceled) {
 			grappling = false;
-			Destroy(grapplePoint.gameObject);
+			if (grapplePoint.gameObject != null) Destroy(grapplePoint.gameObject);
 		}
 	}
 
@@ -175,11 +264,16 @@ public class Player : MonoBehaviour {
 
 	public void Jump (InputAction.CallbackContext context) {
 		if (context.performed && grounded) {
-			VerticalVelocity += jumpHeight;
+			body.velocity = new Vector3(body.velocity.x, 0, body.velocity.z);
+			body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 		}
 	}
 
 	public void Crouch (InputAction.CallbackContext context) {
 
+	}
+
+	private void OnDestroy () {
+		instance = null;
 	}
 }
