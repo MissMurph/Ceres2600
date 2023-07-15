@@ -107,6 +107,7 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	//Todo: replace this and above with checks happening each update, then just reference
 	private bool grounded {
 		get {
 			return Physics.CheckSphere(groundCheck.position, groundDistance, worldLayer);
@@ -159,9 +160,8 @@ public class Player : MonoBehaviour {
 
 		//TODO: come up with smoother mouse movement, lerp somewhere
 		view.transform.position = cameraPos.position;
-		orientation.rotation = Quaternion.Euler(verticalAngle, horizontalAngle, 0);
-		view.transform.localRotation = orientation.rotation;
-		
+		orientation.rotation = Quaternion.Euler(0, horizontalAngle, 0);
+		view.transform.localRotation = Quaternion.Euler(verticalAngle, horizontalAngle, 0);
 	}
 
 	private void UpdateMotion () {
@@ -239,7 +239,7 @@ public class Player : MonoBehaviour {
 
 	public void Grapple (InputAction.CallbackContext context) {
 		if (context.performed) {
-			Ray ray = new(transform.position, orientation.forward);
+			Ray ray = new(transform.position, view.transform.forward);
 
 			if (Physics.Raycast(ray, out RaycastHit hit, 100f, worldLayer)) {
 				grapplePoint = Instantiate(hookPrefab, hit.point, Quaternion.Euler(Vector3.zero)).transform;
