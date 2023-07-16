@@ -252,9 +252,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1256196434}
-  - {fileID: 302756552}
   - {fileID: 1689250795}
   - {fileID: 908701625}
+  - {fileID: 2055456323}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -270,16 +270,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e7742a56d34014596487dd63a0c254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  moveSpeed: 8
   movementMultiplier: 10
   airMultiplier: 0.2
   jumpForce: 50
   direction: {x: 0, y: 0, z: 0}
   motion: {x: 0, y: 0, z: 0}
+  speed: 0
   view: {fileID: 963194227}
   sensitivity: {x: 0.5, y: 0.5}
   cameraPos: {fileID: 1689250795}
-  orientation: {fileID: 302756552}
+  rotation: {fileID: 1256196434}
   worldLayer:
     serializedVersion: 2
     m_Bits: 2048
@@ -290,8 +291,12 @@ MonoBehaviour:
   groundCheck: {fileID: 908701625}
   groundDrag: 4
   airDrag: 0.5
+  slideDrag: 1
   grappleAcceleration: 150
   hookPrefab: {fileID: 367076459761853793, guid: d9cbd22b52a92574cadb55c6d8b37866, type: 3}
+  crouchSpeed: 4
+  crouchedCenter: {fileID: 2055456323}
+  slideForce: 10
 --- !u!114 &108728668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +355,19 @@ MonoBehaviour:
     m_ActionId: 147a9138-13d0-4dd9-b2b1-5d783b27bbac
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 108728667}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Crouch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 620fde88-894d-4712-bfc8-84f4cd15724b
     m_ActionName: Player/Crouch[/Keyboard/ctrl]
   - m_PersistentCalls:
@@ -847,37 +864,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &302756551
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 302756552}
-  m_Layer: 10
-  m_Name: Orientation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &302756552
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 302756551}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 108728666}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &304951089
 GameObject:
@@ -1952,7 +1938,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 108728666}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -2563,7 +2549,7 @@ Transform:
   m_GameObject: {fileID: 1482853148}
   m_LocalRotation: {x: -0, y: -0, z: 0.5735764, w: 0.8191521}
   m_LocalPosition: {x: 27.71, y: 34.29, z: 0.64}
-  m_LocalScale: {x: 5, y: 15, z: 5}
+  m_LocalScale: {x: 5, y: 199.74478, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 972798745}
@@ -2850,12 +2836,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689250794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 108728666}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1772104844
 GameObject:
@@ -3925,6 +3911,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005905604}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2055456322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2055456323}
+  m_Layer: 10
+  m_Name: Crouch Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2055456323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055456322}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 108728666}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2064421098
 GameObject:
   m_ObjectHideFlags: 0

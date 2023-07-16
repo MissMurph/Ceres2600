@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,8 +6,9 @@ public class Player : MonoBehaviour {
 	private static Player instance;
 
 	[Header("Movement")]
+
 	[SerializeField]
-	private float speed;
+	private float moveSpeed;
 
 	[SerializeField] 
 	private float movementMultiplier;
@@ -32,24 +31,30 @@ public class Player : MonoBehaviour {
 	[SerializeField]
 	private Vector3 motion;
 
+	[SerializeField]
+	private float speed;
+
 	public static Vector3 Motion {
 		get {
 			return instance.motion;
 		}
 	}
 
-	public static Rigidbody Body {
+	public static Rigidbody Physics {
 		get {
-			return instance.body;
+			return instance.physics;
 		}
 	}
 
-	private Rigidbody body;
+	private Rigidbody physics;
 
 	private Vector2 moveInput;
 	private Vector3 slopeMoveDirection;
 
 	[Header("Camera")]
+	//[SerializeField]
+	//private InputActionReference lookAction;
+
 	[SerializeField]
 	private Camera view;
 
@@ -59,14 +64,22 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	public static Transform Orientation {
+		get {
+			return instance.view.transform;
+		}
+	}
+
 	[SerializeField]
 	private Vector2 sensitivity;
 
 	[SerializeField]
 	private Transform cameraPos;
 
+	//Horizontal rotation
+	//Put the model here
 	[SerializeField]
-	private Transform orientation;
+	private Transform rotation;
 
 	//This will be the delta of the mouse, how quickly we need to turn
 	//x delta needs to be rotated around the y axis
@@ -97,28 +110,28 @@ public class Player : MonoBehaviour {
 
 	private RaycastHit slopeHit;
 
-	private bool OnSlope {
+	public static bool OnSlope {
 		get {
-			if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, height / 2 + 0.5f)) {
-				if (slopeHit.normal != Vector3.up) return true;
-				else return false;
-			}
-			return false;
+			return instance.onSlope;
 		}
 	}
 
-	//Todo: replace this and above with checks happening each update, then just reference
-	private bool grounded {
+	public static bool Grounded {
 		get {
-			return Physics.CheckSphere(groundCheck.position, groundDistance, worldLayer);
+			return instance.grounded;
 		}
 	}
+
+	private bool onSlope;
+	private bool grounded;
 
 	[Header("Drag")]
 	[SerializeField]
 	private float groundDrag;
 	[SerializeField]
 	private float airDrag;
+	[SerializeField]
+	private float slideDrag;
 
 	[Header("Grappling Hook")]
 	[SerializeField]
@@ -129,23 +142,82 @@ public class Player : MonoBehaviour {
 
 	private bool grappling;
 	private Transform grapplePoint;
+	[SerializeField]
 	private float distance;
+
+	[Header("Crouching")]
+	//How much time it takes to move between crouched and not crouched states
+	[SerializeField]
+	private float crouchSpeed;
+	[SerializeField]
+	private Transform crouchedCenter;
+	[SerializeField]
+	private float slideForce;
+
+	private bool crouching;
+	private bool sliding;
+	private int crouchDirection;
 
 	private void Awake () {
 		instance = this;
-		body = GetComponent<Rigidbody>();
-		body.freezeRotation = true;
+		physics = GetComponent<Rigidbody>();
+		physics.freezeRotation = true;
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 	}
 
 	private void Update () {
+		grounded = UnityEngine.Physics.CheckSphere(groundCheck.position, groundDistance, worldLayer);
+		onSlope = UnityEngine.Physics.Raycast(transform.position, Vector3.down, out slopeHit, height / 2 + 0.5f) && (slopeHit.normal != Vector3.up);
+
 		ControlDrag();
+		ControlFriction();
 	}
 
 	private void FixedUpdate () {
+		UpdateCrouchState();
 		UpdateRotation();
 		UpdateMotion();
+	}
+
+	private void UpdateCrouchState () {
+		if (speed < 5f) sliding = false;
+		if (crouching) {
+			float change = crouchSpeed * Time.fixedDeltaTime;
+			Vector3 currentCenter = bounds.center;
+
+			if (crouchDirection == 1) {
+				currentCenter.y -= change;
+				currentCenter.y = Mathf.Max(currentCenter.y, -0.5f);
+			}
+			else if (crouchDirection == -1) {
+				currentCenter.y += change;
+				currentCenter.y = Mathf.Min(currentCenter.y, 0.5f);
+			}
+
+			bounds.height = Mathf.Max(bounds.height - change, 1f);
+			bounds.center = currentCenter;
+			cameraPos.localPosition = currentCenter;
+		}
+		else {
+			float change = crouchSpeed * Time.fixedDeltaTime;
+			Vector3 currentCenter = bounds.center;
+
+			if (grounded) {
+				currentCenter.y += change;
+				currentCenter.y = Mathf.Min(currentCenter.y, 0f);
+			}
+			else {
+				currentCenter.y -= change;
+				currentCenter.y = Mathf.Max(currentCenter.y, 0f);
+			}
+
+			bounds.height = Mathf.Min(bounds.height + change, 2f);
+			bounds.center = currentCenter;
+			cameraPos.localPosition = currentCenter;
+		}
+
+		groundCheck.localPosition = new Vector3(0, bounds.center.y - bounds.height / 2f, 0);
 	}
 
 	private void UpdateRotation () {
@@ -160,25 +232,23 @@ public class Player : MonoBehaviour {
 
 		//TODO: come up with smoother mouse movement, lerp somewhere
 		view.transform.position = cameraPos.position;
-		orientation.rotation = Quaternion.Euler(0, horizontalAngle, 0);
+		rotation.rotation = Quaternion.Euler(0, horizontalAngle, 0);
 		view.transform.localRotation = Quaternion.Euler(verticalAngle, horizontalAngle, 0);
 	}
 
 	private void UpdateMotion () {
-		Vector3 forwardsMotion = orientation.forward * moveInput.y;
-		Vector3 horizontalMotion = orientation.right * moveInput.x;
+		Vector3 forwardsMotion = sliding ? Vector3.zero : rotation.forward * moveInput.y;
+		Vector3 horizontalMotion = sliding ? Vector3.zero : rotation.right * moveInput.x;
 
 		slopeMoveDirection = Vector3.ProjectOnPlane(forwardsMotion + horizontalMotion, slopeHit.normal);
 
-		Vector3 motionDirection = (forwardsMotion + horizontalMotion).normalized;
-		float motionSpeed = speed * movementMultiplier;
+		if (sliding) slopeMoveDirection = Vector3.ProjectOnPlane(rotation.forward, slopeHit.normal);
 
-		if (grounded && OnSlope) {
+		Vector3 motionDirection = (forwardsMotion + horizontalMotion).normalized;
+		float motionSpeed = moveSpeed * movementMultiplier;
+
+		if (grounded && onSlope) {
 			motionDirection = slopeMoveDirection.normalized;
-			bounds.material.staticFriction = slopeFriction;
-		}
-		else {
-			bounds.material.staticFriction = 0f;
 		}
 
 		if (!grounded) {
@@ -193,7 +263,9 @@ public class Player : MonoBehaviour {
 			motion = ApplyGrappleMotion(motion);
 		}
 
-		body.AddForce(motion, ForceMode.Acceleration);
+		physics.AddForce(motion, ForceMode.Acceleration);
+
+		speed = physics.velocity.magnitude;
 	}
 
 	private Vector3 ApplyGrappleMotion (Vector3 motion) {
@@ -201,13 +273,11 @@ public class Player : MonoBehaviour {
 		float distanceToAnchor = grappleDirection.magnitude;
 
 		if (distance < distanceToAnchor) {
-			float velocity = body.velocity.magnitude;
-			Vector3 newDirection = Vector3.ProjectOnPlane(body.velocity, grappleDirection);
-			body.velocity = newDirection.normalized * velocity;
+			float velocity = physics.velocity.magnitude;
+			Vector3 newDirection = Vector3.ProjectOnPlane(physics.velocity, grappleDirection);
+			physics.velocity = newDirection.normalized * velocity;
 		}
-		else body.AddForce(grappleDirection.normalized * grappleAcceleration, ForceMode.Acceleration);
-
-		//grappleDirection = grappleDirection.normalized;
+		else physics.AddForce(grappleDirection.normalized * grappleAcceleration, ForceMode.Acceleration);
 
 		motion += grappleDirection.normalized * grappleAcceleration;
 
@@ -216,9 +286,21 @@ public class Player : MonoBehaviour {
 
 	private void ControlDrag () {
 		if (grounded) {
-			body.drag = groundDrag;
+			if (sliding) {
+				physics.drag = slideDrag;
+			}
+			else physics.drag = groundDrag;
 		}
-		else body.drag = airDrag;
+		else physics.drag = airDrag;
+	}
+
+	private void ControlFriction () {
+		if (grounded && onSlope && !sliding) {
+			bounds.material.staticFriction = slopeFriction;
+		}
+		else {
+			bounds.material.staticFriction = 0f;
+		}
 	}
 
 	public void Move (InputAction.CallbackContext context) {
@@ -241,7 +323,7 @@ public class Player : MonoBehaviour {
 		if (context.performed) {
 			Ray ray = new(transform.position, view.transform.forward);
 
-			if (Physics.Raycast(ray, out RaycastHit hit, 100f, worldLayer)) {
+			if (UnityEngine.Physics.Raycast(ray, out RaycastHit hit, 100f, worldLayer)) {
 				grapplePoint = Instantiate(hookPrefab, hit.point, Quaternion.Euler(Vector3.zero)).transform;
 				grappling = true;
 				return;
@@ -264,13 +346,27 @@ public class Player : MonoBehaviour {
 
 	public void Jump (InputAction.CallbackContext context) {
 		if (context.performed && grounded) {
-			body.velocity = new Vector3(body.velocity.x, 0, body.velocity.z);
-			body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+			physics.velocity = new Vector3(physics.velocity.x, 0, physics.velocity.z);
+			physics.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 		}
 	}
 
 	public void Crouch (InputAction.CallbackContext context) {
+		if (context.performed) {
+			if (grounded && (onSlope || speed >= 15f)) {
+				sliding = true;
+				physics.AddForce(physics.velocity.normalized * slideForce, ForceMode.Impulse);
+			}
+			if (grounded) crouchDirection = -1;
+			else crouchDirection = 1;
+			crouching = true;
+		}
 
+		if (context.canceled) {
+			crouchDirection = 0;
+			crouching = false;
+			sliding = false;
+		}
 	}
 
 	private void OnDestroy () {
