@@ -317,14 +317,6 @@ namespace Ceres.Player {
 			lookDelta = context.ReadValue<Vector2>();
 		}
 
-		public void Fire (InputAction.CallbackContext context) {
-
-		}
-
-		public void AltFire (InputAction.CallbackContext context) {
-
-		}
-
 		public void Grapple (InputAction.CallbackContext context) {
 			if (context.performed) {
 				Ray ray = new(transform.position, view.transform.forward);
@@ -343,10 +335,6 @@ namespace Ceres.Player {
 		}
 
 		public void Grab (InputAction.CallbackContext context) {
-
-		}
-
-		public void Reload (InputAction.CallbackContext context) {
 
 		}
 

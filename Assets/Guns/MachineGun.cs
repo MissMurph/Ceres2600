@@ -8,11 +8,6 @@ using UnityEngine.InputSystem;
 namespace Ceres.Guns {
 
 	public class MachineGun : Weapon {
-
-		[Header("Input")]
-		[SerializeField] private InputActionReference shootAction;
-		[SerializeField] private InputActionReference reloadAction;
-
 		[SerializeField] private int damage;
 
 		//How many bullets per second can be fired from this gun
@@ -46,11 +41,6 @@ namespace Ceres.Guns {
 
 		[SerializeField]
 		private Transform muzzlePos;
-
-		private void Start () {
-			AttachInput(OnShoot, shootAction);
-			AttachInput(OnReload, reloadAction);
-		}
 
 		protected virtual void FireRay (Action<bool, Entity> callback) {
 			Debug.DrawRay(muzzlePos.position, transform.forward * 100f, Color.yellow, 1f);
@@ -94,23 +84,6 @@ namespace Ceres.Guns {
 
 		private void OnHit (bool result, Entity target) {
 			if (result) target.Attack(damage);
-		}
-
-		protected void AttachInput (Action<InputAction.CallbackContext> listener, InputActionReference action) {
-			action.action.started += listener;
-			action.action.performed += listener;
-			action.action.canceled += listener;
-		}
-
-		protected void DetachInput (Action<InputAction.CallbackContext> listener, InputActionReference action) {
-			action.action.started -= listener;
-			action.action.performed -= listener;
-			action.action.canceled -= listener;
-		}
-
-		private void OnDestroy () {
-			DetachInput(OnShoot, shootAction);
-			DetachInput(OnReload, reloadAction);
 		}
 	}
 }
