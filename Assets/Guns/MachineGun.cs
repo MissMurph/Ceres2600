@@ -42,13 +42,12 @@ namespace Ceres.Guns {
 		[SerializeField]
 		private Transform muzzlePos;
 
-		protected virtual void FireRay (Action<bool, Entity> callback) {
+		protected virtual void FireRay (Action<Vector3, BodyPart> callback) {
 			Debug.DrawRay(muzzlePos.position, transform.forward * 100f, Color.yellow, 1f);
 
-			if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit) && hit.collider.gameObject.TryGetComponent(out Entity e)) {
-				callback(true, e);
+			if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit) && hit.collider.gameObject.TryGetComponent(out BodyPart limb)) {
+				callback(hit.point, limb);
 			}
-			else callback(false, null);
 		}
 
 		protected virtual void Awake () {
@@ -66,7 +65,7 @@ namespace Ceres.Guns {
 			}
 		}
 
-		private void OnShoot (InputAction.CallbackContext context) {
+		public void OnShoot (InputAction.CallbackContext context) {
 			if (context.performed) {
 				firing = true;
 			}
@@ -76,14 +75,14 @@ namespace Ceres.Guns {
 			}
 		}
 
-		private void OnReload (InputAction.CallbackContext context) {
+		public void OnReload (InputAction.CallbackContext context) {
 			if (context.performed) {
 
 			}
 		}
 
-		private void OnHit (bool result, Entity target) {
-			if (result) target.Attack(damage);
+		private void OnHit (Vector3 hit, BodyPart target) {
+			target.Attack(hit, damage);
 		}
 	}
 }
