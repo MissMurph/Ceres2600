@@ -9,6 +9,24 @@ namespace Ceres.Entities {
 		private Body parentBody;
 		private Rigidbody localPhysics;
 
+
+		public Transform DollBone {
+			get {
+				return dollBone;
+			}
+			set {
+				foreach (Transform child in value) {
+					if (child.TryGetComponent(out CharacterJoint joint)) connectedJoints.Add(joint);
+				}
+				dollBone = value;
+			}
+		}
+
+		private Transform dollBone;
+
+		public GameObject dollRenderer;
+		private List<CharacterJoint> connectedJoints;
+
 		[SerializeField]
 		private Rigidbody[] giblets;
 
@@ -16,6 +34,8 @@ namespace Ceres.Entities {
 		private float gibEjectForce;
 
 		private void Awake () {
+			connectedJoints = new List<CharacterJoint>();
+
 			parentBody = GetComponentInParent<Body>();
 			localPhysics = GetComponent<Rigidbody>();
 		}
@@ -29,9 +49,21 @@ namespace Ceres.Entities {
 					gib.AddForce(new Vector3(rando.Next(0,100), rando.Next(0, 100), rando.Next(0, 100)).normalized * gibEjectForce, ForceMode.Impulse);
 				}
 
+				foreach (CharacterJoint joint in connectedJoints) {
+					Transform obj = joint.transform;
+					//Destroy(joint);
+					obj.SetParent(null, true);
+				}
+
+				Destroy(dollBone.gameObject);
+				Destroy(dollRenderer);
 				parentBody.Health -= damage;
 				Destroy(gameObject);
 			}
+		}
+
+		private void Update () {
+			if (dollBone != null) dollBone.SetPositionAndRotation(transform.position, transform.rotation);
 		}
 	}
 }
