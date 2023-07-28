@@ -6,26 +6,71 @@ namespace Ceres.Entities {
 
 	public class BodyPart : MonoBehaviour {
 
-		private Body parentBody;
-		private Rigidbody localPhysics;
-
-
-		public Transform DollBone {
+		public Entity Parent {
 			get {
-				return dollBone;
+				return parentEntity;
 			}
 			set {
-				foreach (Transform child in value) {
-					if (child.TryGetComponent(out CharacterJoint joint)) connectedJoints.Add(joint);
-				}
-				dollBone = value;
+				if (parentEntity != null) return;
+				parentEntity = value;
 			}
 		}
 
-		private Transform dollBone;
+		public Transform SisterBone {
+			get {
+				return sisterBone;
+			}
+			set {
+				if (sisterBone != null) return;
+				sisterBone = value;
+			}
+		}
 
-		public GameObject dollRenderer;
-		private List<CharacterJoint> connectedJoints;
+		public GameObject SisterSkin {
+			get {
+				return skin;
+			}
+			set {
+				if (skin != null) return;
+				skin = value;
+			}
+		}
+
+		public GameObject[] BoneBundle {
+			get { 
+				return bones; 
+			}
+			set {
+				if (bones != null) return;
+				bones = value;
+			}
+		}
+
+		public CharacterJoint[] Joints {
+			get {
+				return connectedJoints;
+			}
+			set {
+				if (connectedJoints != null) return;
+				connectedJoints = value;
+			}
+		}
+
+		public bool Initialized {
+			get {
+				return sisterBone != null
+					&& bones != null
+					&& skin != null
+					&& connectedJoints != null;
+			}
+		}
+
+		private Entity parentEntity;
+		//The Ragdoll bone that moves with this bone
+		private Transform sisterBone;
+		private GameObject[] bones;
+		private GameObject skin;
+		private CharacterJoint[] connectedJoints;
 
 		[SerializeField]
 		private Rigidbody[] giblets;
@@ -33,37 +78,44 @@ namespace Ceres.Entities {
 		[SerializeField]
 		private float gibEjectForce;
 
-		private void Awake () {
-			connectedJoints = new List<CharacterJoint>();
+		public void Attack (Vector3 hit, int damage) {
+			if (!Initialized) return;
+			System.Random rando = new System.Random();
 
-			parentBody = GetComponentInParent<Body>();
-			localPhysics = GetComponent<Rigidbody>();
+			//We first need to determine if this is a killing hit
+			if (parentEntity.Health - damage <= 0) {
+				DetachSister();
+			}
+
+			parentEntity.Health -= damage;
 		}
 
-		public void Attack (Vector3 hit, int damage) {
-			System.Random rando = new System.Random();
-			//We first need to determine if this is a killing hit
-			if (parentBody.Health - damage <= 0) {
-				foreach (Rigidbody gib in giblets) {
-					gib.gameObject.SetActive(true);
-					gib.AddForce(new Vector3(rando.Next(0,100), rando.Next(0, 100), rando.Next(0, 100)).normalized * gibEjectForce, ForceMode.Impulse);
-				}
+		//This only detaches from the ragdoll, limbs will be destroyed anyways by the Body so we won't destroy the limb here.
+		public void DetachSister () {
+			System.Random rando = new();
 
-				foreach (CharacterJoint joint in connectedJoints) {
-					Transform obj = joint.transform;
-					//Destroy(joint);
-					obj.SetParent(null, true);
-				}
-
-				Destroy(dollBone.gameObject);
-				Destroy(dollRenderer);
-				parentBody.Health -= damage;
-				Destroy(gameObject);
+			foreach (Rigidbody gib in giblets) {
+				gib.transform.SetParent(null, true);
+				gib.gameObject.SetActive(true);
+				gib.AddForce(new Vector3(rando.Next(0,100), rando.Next(0, 100), rando.Next(0, 100)).normalized * gibEjectForce, ForceMode.Impulse);
 			}
+
+			foreach (CharacterJoint joint in connectedJoints) {
+				Component.Destroy(joint);
+			}
+
+			foreach (GameObject bone in bones) {
+				foreach (Transform child in bone.transform) {
+					child.SetParent(null, true);
+				}
+			}
+
+			Destroy(sisterBone.gameObject);
+			Destroy(SisterSkin);
 		}
 
 		private void Update () {
-			if (dollBone != null) dollBone.SetPositionAndRotation(transform.position, transform.rotation);
+			if (Initialized) sisterBone.SetPositionAndRotation(transform.position, transform.rotation);
 		}
 	}
 }

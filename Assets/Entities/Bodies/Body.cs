@@ -2,83 +2,106 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 namespace Ceres.Entities {
 
     public class Body : MonoBehaviour {
 
-		public int Health {
-			get {
-				return health;
-			}
-			set {
-				if (health + value <= 0) Die();
-				health = value;
-			}
-		}
-
-		[SerializeField]
-		private int health;
-
-		[SerializeField]
-		private int maxHealth;
-
 		private Dictionary<string, BodyPart> registeredLimbs;
-		private Dictionary<string, GameObject> registeredRenderers;
-		private Dictionary<string, Transform> registeredDollLimbs;
+		private Dictionary<string, List<CharacterJoint>> registeredJoints;
 
 		[SerializeField]
-		private LimbBinding[] limbs;
+		private DollLimb[] limbs;
 
 		[SerializeField]
 		private GameObject doll;
 
+		public bool Initialized {
+			get {
+				return init;
+			}
+		}
+
+		private bool init = false;
+
+		public BodyPart this[string path] {
+			get {
+				if (init && registeredLimbs.TryGetValue(path, out BodyPart found)) {
+					return found;
+				}
+				else throw new ArgumentException("No matching limb found at " + path + "!");
+			}
+		}
+
 		private void Awake () {
 			registeredLimbs = new Dictionary<string, BodyPart>();
-			registeredRenderers = new Dictionary<string, GameObject>();
-			registeredDollLimbs = new Dictionary<string, Transform>();
+			registeredJoints = new Dictionary<string, List<CharacterJoint>>();
+			Entity parent = GetComponent<Entity>();
 
-			foreach (LimbBinding binding in limbs) {
+			/*foreach (CharacterJoint joint in joints) {
+				string parentPath = joint.connectedBody.transform.BonePath();
+
+				List<CharacterJoint> collection = JointList(parentPath);
+				collection.Add(joint);
+
+				if (!registeredJoints.ContainsKey(parentPath)) registeredJoints[parentPath] = collection;
+			}*/
+
+			foreach (DollLimb binding in limbs) {
+				string path = binding.limb.transform.BonePath();
+				Transform sisterBone = doll.transform.Find(path);
+
+				//List<GameObject> dollBones = new();
+
+				/*foreach (GameObject avatarBone in binding.bones) {
+					Transform foundDollBone = doll.transform.Find(avatarBone.transform.BonePath());
+
+					if (foundDollBone == null) throw new Exception("No matching ragdoll bone found for child-bone " + avatarBone.transform.BonePath() + "!");
+
+					dollBones.Add(foundDollBone.gameObject);
+				}*/
+
+				if (sisterBone == null) throw new Exception("No matching ragdoll bone found for limb " + path + "!");
+
 				registeredLimbs[binding.limb.name] = binding.limb;
-				registeredRenderers[binding.limb.name] = binding.renderer;
 
-				string limbPath = binding.limb.transform.GetPath();
-				Transform foundDoll = doll.transform.Find(limbPath);
-				GameObject dollRenderer = doll.transform.Find(binding.renderer.name).gameObject;
-
-				if (foundDoll != null) {
-					registeredDollLimbs[binding.limb.name] = foundDoll;
-					binding.limb.DollBone = registeredDollLimbs[binding.limb.name];
-					binding.limb.dollRenderer = dollRenderer;
-				}
-				else Debug.Log("Couldn't find Ragdoll Bone " + limbPath);
+				binding.limb.SisterBone = sisterBone;
+				binding.limb.SisterSkin = binding.skin;
+				binding.limb.BoneBundle = binding.bones;
+				binding.limb.Joints = binding.linkedJoints;
+				binding.limb.Parent = parent;
 			}
 
-			health = maxHealth;
+			init = true;
 		}
 
-		private void Update () {
-			
-		}
-
-		private void Die () {
+		public void Die () {
 			doll.transform.parent = null;
 			doll.SetActive(true);
 			Destroy(gameObject);
 		}
+
+		//If there are no joints connected to a limb, this will return a new empty list
+		private List<CharacterJoint> JointList (string parentPath) {
+			List<CharacterJoint> joints = registeredJoints.GetValueOrDefault(parentPath, new List<CharacterJoint>());
+			return joints;
+		}
 	}
 
 	[Serializable]
-	public class LimbBinding {
+	public class DollLimb {
 		public BodyPart limb;
-		public GameObject renderer;
+		public GameObject skin;
+		public GameObject[] bones;
+		public CharacterJoint[] linkedJoints;
 	}
 
-	public static class TransformExtensions {
-		public static string GetPath (this Transform current) {
+	internal static class TransformExtensions {
+		internal static string BonePath (this Transform current) {
 			if (current.parent == null || current.name == "Armature")
 				return current.name;
-			return current.parent.GetPath() + "/" + current.name;
+			return current.parent.BonePath() + "/" + current.name;
 		}
 	}
 }
