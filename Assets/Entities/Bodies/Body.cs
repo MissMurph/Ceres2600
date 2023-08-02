@@ -12,7 +12,7 @@ namespace Ceres.Entities {
 		private Dictionary<string, List<CharacterJoint>> registeredJoints;
 
 		[SerializeField]
-		private DollLimb[] limbs;
+		private BodyPart[] limbs;
 
 		[SerializeField]
 		private GameObject doll;
@@ -34,6 +34,12 @@ namespace Ceres.Entities {
 			}
 		}
 
+		public GameObject Ragdoll {
+			get {
+				return doll;
+			}
+		}
+
 		private void Awake () {
 			registeredLimbs = new Dictionary<string, BodyPart>();
 			registeredJoints = new Dictionary<string, List<CharacterJoint>>();
@@ -48,30 +54,7 @@ namespace Ceres.Entities {
 				if (!registeredJoints.ContainsKey(parentPath)) registeredJoints[parentPath] = collection;
 			}*/
 
-			foreach (DollLimb binding in limbs) {
-				string path = binding.limb.transform.BonePath();
-				Transform sisterBone = doll.transform.Find(path);
-
-				//List<GameObject> dollBones = new();
-
-				/*foreach (GameObject avatarBone in binding.bones) {
-					Transform foundDollBone = doll.transform.Find(avatarBone.transform.BonePath());
-
-					if (foundDollBone == null) throw new Exception("No matching ragdoll bone found for child-bone " + avatarBone.transform.BonePath() + "!");
-
-					dollBones.Add(foundDollBone.gameObject);
-				}*/
-
-				if (sisterBone == null) throw new Exception("No matching ragdoll bone found for limb " + path + "!");
-
-				registeredLimbs[binding.limb.name] = binding.limb;
-
-				binding.limb.SisterBone = sisterBone;
-				binding.limb.SisterSkin = binding.skin;
-				binding.limb.BoneBundle = binding.bones;
-				binding.limb.Joints = binding.linkedJoints;
-				binding.limb.Parent = parent;
-			}
+			
 
 			init = true;
 		}
@@ -81,20 +64,6 @@ namespace Ceres.Entities {
 			doll.SetActive(true);
 			Destroy(gameObject);
 		}
-
-		//If there are no joints connected to a limb, this will return a new empty list
-		private List<CharacterJoint> JointList (string parentPath) {
-			List<CharacterJoint> joints = registeredJoints.GetValueOrDefault(parentPath, new List<CharacterJoint>());
-			return joints;
-		}
-	}
-
-	[Serializable]
-	public class DollLimb {
-		public BodyPart limb;
-		public GameObject skin;
-		public GameObject[] bones;
-		public CharacterJoint[] linkedJoints;
 	}
 
 	internal static class TransformExtensions {

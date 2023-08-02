@@ -144,6 +144,7 @@ namespace Ceres.Player {
 
 		private bool grappling;
 		private Transform grapplePoint;
+		private LineRenderer grappleLine;
 		[SerializeField]
 		private float distance;
 
@@ -184,6 +185,8 @@ namespace Ceres.Player {
 			UpdateCrouchState();
 			UpdateRotation();
 			UpdateMotion();
+
+			if (grappling) grappleLine.SetPositions(new Vector3[] { grapplePoint.position, transform.position + Vector3.left * 0.1f });
 		}
 
 		private void UpdateCrouchState () {
@@ -323,6 +326,7 @@ namespace Ceres.Player {
 
 				if (UnityEngine.Physics.Raycast(ray, out RaycastHit hit, 100f, worldLayer)) {
 					grapplePoint = Instantiate(hookPrefab, hit.point, Quaternion.Euler(Vector3.zero)).transform;
+					grappleLine = grapplePoint.GetComponent<LineRenderer>();
 					grappling = true;
 					return;
 				}
