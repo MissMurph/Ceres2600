@@ -37,7 +37,7 @@ namespace Ceres.Entities {
 				return currentHealth;
 			}
 			set {
-				if (currentHealth + value <= 0) avatar.Die();
+				//if (currentHealth + value <= 0) avatar.Die();
 				currentHealth = value;
 			}
 		}

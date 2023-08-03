@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 namespace Ceres.Entities {
@@ -40,26 +41,24 @@ namespace Ceres.Entities {
 			}
 		}
 
+		private Entity controller;
+
 		private void Awake () {
+			controller = GetComponent<Entity>();
 			registeredLimbs = new Dictionary<string, BodyPart>();
 			registeredJoints = new Dictionary<string, List<CharacterJoint>>();
-			Entity parent = GetComponent<Entity>();
-
-			/*foreach (CharacterJoint joint in joints) {
-				string parentPath = joint.connectedBody.transform.BonePath();
-
-				List<CharacterJoint> collection = JointList(parentPath);
-				collection.Add(joint);
-
-				if (!registeredJoints.ContainsKey(parentPath)) registeredJoints[parentPath] = collection;
-			}*/
-
-			
-
-			init = true;
 		}
 
-		public void Die () {
+		public void AttackBody (BodyPart limbHit, int damage) {
+			if (controller.Health - damage <= 0) {
+				limbHit.Destruct();
+				Die();
+			}
+
+			controller.Health -= damage;
+		}
+
+		private void Die () {
 			doll.transform.parent = null;
 			doll.SetActive(true);
 			Destroy(gameObject);

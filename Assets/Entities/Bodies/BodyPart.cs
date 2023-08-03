@@ -1,17 +1,25 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Ceres.Entities {
 
 	public class BodyPart : MonoBehaviour {
 
-		private Entity parentEntity;
+		private Body parentBody;
 
 		[Header("Ragdoll Link")]
 		//The Ragdoll bone that moves with this bone
 		[SerializeField] private Transform sisterBone;
 		[SerializeField] private GameObject[] bones;
 		[SerializeField] private GameObject skin;
+		private Rigidbody physicsBody;
+
+		public Rigidbody Physics {
+			get { 
+				return physicsBody;
+			}
+		}
 
 		[Header("Neighbours")]
 		[SerializeField] private BodyPart[] neighbours;
@@ -24,12 +32,13 @@ namespace Ceres.Entities {
 
 		private void Awake () {
 			giblets = new();
+			physicsBody = sisterBone.GetComponent<Rigidbody>();
 
-			if (TryGetComponent(out CharacterJoint comp)) jointComp = comp;
+			if (sisterBone.TryGetComponent(out CharacterJoint comp)) jointComp = comp;
 
-			parentEntity = transform.root.GetComponent<Entity>();
+			parentBody = transform.root.GetComponent<Body>();
 
-			foreach (Transform child in transform) {
+			foreach (Transform child in sisterBone) {
 				if (child.tag == "Giblet" && child.TryGetComponent(out Rigidbody gibPhysics)) {
 					giblets.Add(gibPhysics);
 				}
@@ -37,16 +46,13 @@ namespace Ceres.Entities {
 		}
 
 		public void Attack (Vector3 hit, int damage) {
-			//We first need to determine if this is a killing hit
-			if (parentEntity.Health - damage <= 0) {
-				Destroy(this);
-			}
-
-			parentEntity.Health -= damage;
+			parentBody.AttackBody(this, damage);
 		}
 
 		public void Detach (BodyPart source) {
-			if (jointComp != null) Destroy(jointComp);
+			if (jointComp != null 
+				&& ReferenceEquals(jointComp.connectedBody, source.Physics)) 
+				Component.Destroy(jointComp);
 
 			for (int i = 0; i < jointGibs.Length; i++) {
 				if (ReferenceEquals(neighbours[i], source)) {
@@ -59,27 +65,30 @@ namespace Ceres.Entities {
 			sisterBone.SetPositionAndRotation(transform.position, transform.rotation);
 		}
 
-		private void OnDestroy () {
+		public void Destruct () {
 			System.Random rando = new();
-
-			foreach (GameObject bone in bones) {
-				foreach (Transform child in bone.transform) {
-					child.SetParent(null, true);
-				}
-			}
 
 			foreach (BodyPart joint in neighbours) {
 				joint.Detach(this);
 			}
+
+			foreach (GameObject bone in bones) {
+				foreach (Transform child in bone.transform) {
+					if (!bones.Contains(child.gameObject)) child.SetParent(null, true);
+				}
+			} 
+
+			foreach (GameObject bone in bones) {
+				Destroy(bone);
+			}
+
+			Destroy(skin);
 
 			foreach (Rigidbody gib in giblets) {
 				gib.transform.SetParent(null, true);
 				gib.gameObject.SetActive(true);
 				gib.AddForce(new Vector3(rando.Next(0, 100), rando.Next(0, 100), rando.Next(0, 100)).normalized * gibEjectForce, ForceMode.Impulse);
 			}
-
-			Destroy(sisterBone);
-			Destroy(skin);
 		}
 	}
 }
