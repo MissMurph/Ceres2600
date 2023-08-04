@@ -7,34 +7,36 @@ AvatarMask:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: UpperBodyMask
-  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Mask: 00000000000000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
   m_Elements:
   - m_Path: 
     m_Weight: 1
+  - m_Path: Abdomen
+    m_Weight: 0
   - m_Path: Armature
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Arm IK L
     m_Weight: 1
   - m_Path: Armature/Main Controller/Arm IK L/Arm IK L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Arm IK R
     m_Weight: 1
   - m_Path: Armature/Main Controller/Arm IK R/Arm IK R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Elbow IK L
     m_Weight: 1
   - m_Path: Armature/Main Controller/Elbow IK L/Elbow IK L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Elbow IK R
     m_Weight: 1
   - m_Path: Armature/Main Controller/Elbow IK R/Elbow IK R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Hip
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Hip/Spine
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Hip/Spine/Chest
     m_Weight: 1
   - m_Path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck
@@ -100,68 +102,68 @@ AvatarMask:
       R/Thumb R/Thumb Tip R/Thumb Tip R_end
     m_Weight: 1
   - m_Path: Armature/Main Controller/Hip/Thigh L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Hip/Thigh L/Calf L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L/Foot L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Hip/Thigh R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Hip/Thigh R/Calf R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R/Foot R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Knee IK L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Knee IK L/Knee IK L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Knee IK R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Knee IK R/Knee IK R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Leg IK L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Leg IK L/Leg IK L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Leg IK R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Main Controller/Leg IK R/Leg IK R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: HeadMesh
     m_Weight: 1
   - m_Path: Left Bicep
     m_Weight: 1
   - m_Path: Left Calf
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Left Foot
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Left Forearm
     m_Weight: 1
   - m_Path: Left Hand
     m_Weight: 1
   - m_Path: Left Thigh
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: NeckMesh
     m_Weight: 1
   - m_Path: Right Bicep
     m_Weight: 1
   - m_Path: Right Calf
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Right Foot
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Right Forearm
     m_Weight: 1
   - m_Path: Right Hand
     m_Weight: 1
   - m_Path: Right Thigh
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Torso
     m_Weight: 1

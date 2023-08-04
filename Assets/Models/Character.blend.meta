@@ -72,12 +72,172 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      bodyMask: 01000000010000000000000001000000010000000000000000000000000000000000000001000000010000000000000000000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Abdomen
+        weight: 1
+      - path: Armature
+        weight: 0
+      - path: Armature/Main Controller
+        weight: 0
+      - path: Armature/Main Controller/Arm IK L
+        weight: 0
+      - path: Armature/Main Controller/Arm IK L/Arm IK L_end
+        weight: 0
+      - path: Armature/Main Controller/Arm IK R
+        weight: 0
+      - path: Armature/Main Controller/Arm IK R/Arm IK R_end
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK L
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK L/Elbow IK L_end
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK R
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK R/Elbow IK R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip
+        weight: 1
+      - path: Armature/Main Controller/Hip/Spine
+        weight: 1
+      - path: Armature/Main Controller/Hip/Spine/Chest
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head/Head_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L/Fingers L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L/Fingers L/Fingers L_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L/Thumb Tip L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L/Thumb Tip L/Thumb Tip L_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R/Fingers R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R/Fingers R/Fingers R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R/Thumb Tip R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R/Thumb Tip R/Thumb Tip R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Thigh L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L/Foot L_end
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R/Foot R_end
+        weight: 1
+      - path: Armature/Main Controller/Knee IK L
+        weight: 1
+      - path: Armature/Main Controller/Knee IK L/Knee IK L_end
+        weight: 1
+      - path: Armature/Main Controller/Knee IK R
+        weight: 1
+      - path: Armature/Main Controller/Knee IK R/Knee IK R_end
+        weight: 1
+      - path: Armature/Main Controller/Leg IK L
+        weight: 1
+      - path: Armature/Main Controller/Leg IK L/Leg IK L_end
+        weight: 1
+      - path: Armature/Main Controller/Leg IK R
+        weight: 1
+      - path: Armature/Main Controller/Leg IK R/Leg IK R_end
+        weight: 1
+      - path: HeadMesh
+        weight: 0
+      - path: Left Bicep
+        weight: 0
+      - path: Left Calf
+        weight: 1
+      - path: Left Foot
+        weight: 1
+      - path: Left Forearm
+        weight: 0
+      - path: Left Hand
+        weight: 0
+      - path: Left Thigh
+        weight: 1
+      - path: NeckMesh
+        weight: 0
+      - path: Right Bicep
+        weight: 0
+      - path: Right Calf
+        weight: 1
+      - path: Right Foot
+        weight: 1
+      - path: Right Forearm
+        weight: 0
+      - path: Right Hand
+        weight: 0
+      - path: Right Thigh
+        weight: 1
+      - path: Torso
+        weight: 0
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: 1323324594b794042bf29164e49706c1, type: 2}
       additiveReferencePoseFrame: 0.96
     - serializedVersion: 16
       name: Armature|Running
@@ -91,7 +251,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -101,12 +261,172 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      bodyMask: 01000000010000000000000001000000010000000000000000000000000000000000000001000000010000000000000000000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Abdomen
+        weight: 1
+      - path: Armature
+        weight: 0
+      - path: Armature/Main Controller
+        weight: 0
+      - path: Armature/Main Controller/Arm IK L
+        weight: 0
+      - path: Armature/Main Controller/Arm IK L/Arm IK L_end
+        weight: 0
+      - path: Armature/Main Controller/Arm IK R
+        weight: 0
+      - path: Armature/Main Controller/Arm IK R/Arm IK R_end
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK L
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK L/Elbow IK L_end
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK R
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK R/Elbow IK R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip
+        weight: 1
+      - path: Armature/Main Controller/Hip/Spine
+        weight: 1
+      - path: Armature/Main Controller/Hip/Spine/Chest
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head/Head_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L/Fingers L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L/Fingers L/Fingers L_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L/Thumb Tip L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L/Thumb Tip L/Thumb Tip L_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R/Fingers R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R/Fingers R/Fingers R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R/Thumb Tip R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R/Thumb Tip R/Thumb Tip R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Thigh L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L/Foot L_end
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R/Foot R_end
+        weight: 1
+      - path: Armature/Main Controller/Knee IK L
+        weight: 1
+      - path: Armature/Main Controller/Knee IK L/Knee IK L_end
+        weight: 1
+      - path: Armature/Main Controller/Knee IK R
+        weight: 1
+      - path: Armature/Main Controller/Knee IK R/Knee IK R_end
+        weight: 1
+      - path: Armature/Main Controller/Leg IK L
+        weight: 1
+      - path: Armature/Main Controller/Leg IK L/Leg IK L_end
+        weight: 1
+      - path: Armature/Main Controller/Leg IK R
+        weight: 1
+      - path: Armature/Main Controller/Leg IK R/Leg IK R_end
+        weight: 1
+      - path: HeadMesh
+        weight: 0
+      - path: Left Bicep
+        weight: 0
+      - path: Left Calf
+        weight: 1
+      - path: Left Foot
+        weight: 1
+      - path: Left Forearm
+        weight: 0
+      - path: Left Hand
+        weight: 0
+      - path: Left Thigh
+        weight: 1
+      - path: NeckMesh
+        weight: 0
+      - path: Right Bicep
+        weight: 0
+      - path: Right Calf
+        weight: 1
+      - path: Right Foot
+        weight: 1
+      - path: Right Forearm
+        weight: 0
+      - path: Right Hand
+        weight: 0
+      - path: Right Thigh
+        weight: 1
+      - path: Torso
+        weight: 0
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: 1323324594b794042bf29164e49706c1, type: 2}
       additiveReferencePoseFrame: 0.96
     - serializedVersion: 16
       name: Armature|Idle
@@ -120,7 +440,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -130,12 +450,172 @@ ModelImporter:
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      bodyMask: 01000000010000000000000001000000010000000000000000000000000000000000000001000000010000000000000000000000
       curves: []
       events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Abdomen
+        weight: 1
+      - path: Armature
+        weight: 0
+      - path: Armature/Main Controller
+        weight: 0
+      - path: Armature/Main Controller/Arm IK L
+        weight: 0
+      - path: Armature/Main Controller/Arm IK L/Arm IK L_end
+        weight: 0
+      - path: Armature/Main Controller/Arm IK R
+        weight: 0
+      - path: Armature/Main Controller/Arm IK R/Arm IK R_end
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK L
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK L/Elbow IK L_end
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK R
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK R/Elbow IK R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip
+        weight: 1
+      - path: Armature/Main Controller/Hip/Spine
+        weight: 1
+      - path: Armature/Main Controller/Hip/Spine/Chest
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head/Head_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L/Fingers L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L/Fingers L/Fingers L_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L/Thumb Tip L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L/Thumb Tip L/Thumb Tip L_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R/Fingers R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R/Fingers R/Fingers R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R/Thumb Tip R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R/Thumb Tip R/Thumb Tip R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Thigh L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L/Foot L_end
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R/Foot R_end
+        weight: 1
+      - path: Armature/Main Controller/Knee IK L
+        weight: 1
+      - path: Armature/Main Controller/Knee IK L/Knee IK L_end
+        weight: 1
+      - path: Armature/Main Controller/Knee IK R
+        weight: 1
+      - path: Armature/Main Controller/Knee IK R/Knee IK R_end
+        weight: 1
+      - path: Armature/Main Controller/Leg IK L
+        weight: 1
+      - path: Armature/Main Controller/Leg IK L/Leg IK L_end
+        weight: 1
+      - path: Armature/Main Controller/Leg IK R
+        weight: 1
+      - path: Armature/Main Controller/Leg IK R/Leg IK R_end
+        weight: 1
+      - path: HeadMesh
+        weight: 0
+      - path: Left Bicep
+        weight: 0
+      - path: Left Calf
+        weight: 1
+      - path: Left Foot
+        weight: 1
+      - path: Left Forearm
+        weight: 0
+      - path: Left Hand
+        weight: 0
+      - path: Left Thigh
+        weight: 1
+      - path: NeckMesh
+        weight: 0
+      - path: Right Bicep
+        weight: 0
+      - path: Right Calf
+        weight: 1
+      - path: Right Foot
+        weight: 1
+      - path: Right Forearm
+        weight: 0
+      - path: Right Hand
+        weight: 0
+      - path: Right Thigh
+        weight: 1
+      - path: Torso
+        weight: 0
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: 1323324594b794042bf29164e49706c1, type: 2}
       additiveReferencePoseFrame: 0.96
     isReadable: 0
   meshes:
