@@ -14,16 +14,19 @@ ModelImporter:
     second: Idle
   - first:
       74: -4274770991410265338
-    second: Armature|Walking
+    second: Walking
   - first:
       74: -3828583913261678786
-    second: Armature|Running
+    second: Running
   - first:
       74: -8945691123924629249
-    second: Armature|Idle
+    second: Idle
   - first:
       74: 5805127158331366216
     second: Armature|Crouching
+  - first:
+      74: -236022367644965580
+    second: Armature|Idle (1)
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -54,7 +57,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Walking
+      name: Walking
       takeName: Armature|Walking
       internalID: 0
       firstFrame: 0
@@ -67,577 +70,10 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000000000001000000010000000000000000000000000000000000000001000000010000000000000000000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Abdomen
-        weight: 1
-      - path: Armature
-        weight: 0
-      - path: Armature/Main Controller
-        weight: 0
-      - path: Armature/Main Controller/Arm IK L
-        weight: 0
-      - path: Armature/Main Controller/Arm IK L/Arm IK L_end
-        weight: 0
-      - path: Armature/Main Controller/Arm IK R
-        weight: 0
-      - path: Armature/Main Controller/Arm IK R/Arm IK R_end
-        weight: 0
-      - path: Armature/Main Controller/Elbow IK L
-        weight: 0
-      - path: Armature/Main Controller/Elbow IK L/Elbow IK L_end
-        weight: 0
-      - path: Armature/Main Controller/Elbow IK R
-        weight: 0
-      - path: Armature/Main Controller/Elbow IK R/Elbow IK R_end
-        weight: 0
-      - path: Armature/Main Controller/Hip
-        weight: 1
-      - path: Armature/Main Controller/Hip/Spine
-        weight: 1
-      - path: Armature/Main Controller/Hip/Spine/Chest
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head/Head_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Palm L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Palm L/Fingers L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Palm L/Fingers L/Fingers L_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Thumb L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Thumb L/Thumb Tip L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Thumb L/Thumb Tip L/Thumb Tip L_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Palm R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Palm R/Fingers R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Palm R/Fingers R/Fingers R_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Thumb R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Thumb R/Thumb Tip R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Thumb R/Thumb Tip R/Thumb Tip R_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Thigh L
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh L/Calf L
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L/Foot L_end
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R/Calf R
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R/Foot R_end
-        weight: 1
-      - path: Armature/Main Controller/Knee IK L
-        weight: 1
-      - path: Armature/Main Controller/Knee IK L/Knee IK L_end
-        weight: 1
-      - path: Armature/Main Controller/Knee IK R
-        weight: 1
-      - path: Armature/Main Controller/Knee IK R/Knee IK R_end
-        weight: 1
-      - path: Armature/Main Controller/Leg IK L
-        weight: 1
-      - path: Armature/Main Controller/Leg IK L/Leg IK L_end
-        weight: 1
-      - path: Armature/Main Controller/Leg IK R
-        weight: 1
-      - path: Armature/Main Controller/Leg IK R/Leg IK R_end
-        weight: 1
-      - path: HeadMesh
-        weight: 0
-      - path: Left Bicep
-        weight: 0
-      - path: Left Calf
-        weight: 1
-      - path: Left Foot
-        weight: 1
-      - path: Left Forearm
-        weight: 0
-      - path: Left Hand
-        weight: 0
-      - path: Left Thigh
-        weight: 1
-      - path: NeckMesh
-        weight: 0
-      - path: Right Bicep
-        weight: 0
-      - path: Right Calf
-        weight: 1
-      - path: Right Foot
-        weight: 1
-      - path: Right Forearm
-        weight: 0
-      - path: Right Hand
-        weight: 0
-      - path: Right Thigh
-        weight: 1
-      - path: Torso
-        weight: 0
-      maskType: 1
-      maskSource: {fileID: 31900000, guid: 1323324594b794042bf29164e49706c1, type: 2}
-      additiveReferencePoseFrame: 0.96
-    - serializedVersion: 16
-      name: Armature|Running
-      takeName: Armature|Running
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 16
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000000000001000000010000000000000000000000000000000000000001000000010000000000000000000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Abdomen
-        weight: 1
-      - path: Armature
-        weight: 0
-      - path: Armature/Main Controller
-        weight: 0
-      - path: Armature/Main Controller/Arm IK L
-        weight: 0
-      - path: Armature/Main Controller/Arm IK L/Arm IK L_end
-        weight: 0
-      - path: Armature/Main Controller/Arm IK R
-        weight: 0
-      - path: Armature/Main Controller/Arm IK R/Arm IK R_end
-        weight: 0
-      - path: Armature/Main Controller/Elbow IK L
-        weight: 0
-      - path: Armature/Main Controller/Elbow IK L/Elbow IK L_end
-        weight: 0
-      - path: Armature/Main Controller/Elbow IK R
-        weight: 0
-      - path: Armature/Main Controller/Elbow IK R/Elbow IK R_end
-        weight: 0
-      - path: Armature/Main Controller/Hip
-        weight: 1
-      - path: Armature/Main Controller/Hip/Spine
-        weight: 1
-      - path: Armature/Main Controller/Hip/Spine/Chest
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head/Head_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Palm L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Palm L/Fingers L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Palm L/Fingers L/Fingers L_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Thumb L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Thumb L/Thumb Tip L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Thumb L/Thumb Tip L/Thumb Tip L_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Palm R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Palm R/Fingers R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Palm R/Fingers R/Fingers R_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Thumb R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Thumb R/Thumb Tip R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Thumb R/Thumb Tip R/Thumb Tip R_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Thigh L
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh L/Calf L
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L/Foot L_end
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R/Calf R
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R/Foot R_end
-        weight: 1
-      - path: Armature/Main Controller/Knee IK L
-        weight: 1
-      - path: Armature/Main Controller/Knee IK L/Knee IK L_end
-        weight: 1
-      - path: Armature/Main Controller/Knee IK R
-        weight: 1
-      - path: Armature/Main Controller/Knee IK R/Knee IK R_end
-        weight: 1
-      - path: Armature/Main Controller/Leg IK L
-        weight: 1
-      - path: Armature/Main Controller/Leg IK L/Leg IK L_end
-        weight: 1
-      - path: Armature/Main Controller/Leg IK R
-        weight: 1
-      - path: Armature/Main Controller/Leg IK R/Leg IK R_end
-        weight: 1
-      - path: HeadMesh
-        weight: 0
-      - path: Left Bicep
-        weight: 0
-      - path: Left Calf
-        weight: 1
-      - path: Left Foot
-        weight: 1
-      - path: Left Forearm
-        weight: 0
-      - path: Left Hand
-        weight: 0
-      - path: Left Thigh
-        weight: 1
-      - path: NeckMesh
-        weight: 0
-      - path: Right Bicep
-        weight: 0
-      - path: Right Calf
-        weight: 1
-      - path: Right Foot
-        weight: 1
-      - path: Right Forearm
-        weight: 0
-      - path: Right Hand
-        weight: 0
-      - path: Right Thigh
-        weight: 1
-      - path: Torso
-        weight: 0
-      maskType: 1
-      maskSource: {fileID: 31900000, guid: 1323324594b794042bf29164e49706c1, type: 2}
-      additiveReferencePoseFrame: 0.96
-    - serializedVersion: 16
-      name: Armature|Idle
-      takeName: Armature|Idle
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 47
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000000000001000000010000000000000000000000000000000000000001000000010000000000000000000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Abdomen
-        weight: 1
-      - path: Armature
-        weight: 0
-      - path: Armature/Main Controller
-        weight: 0
-      - path: Armature/Main Controller/Arm IK L
-        weight: 0
-      - path: Armature/Main Controller/Arm IK L/Arm IK L_end
-        weight: 0
-      - path: Armature/Main Controller/Arm IK R
-        weight: 0
-      - path: Armature/Main Controller/Arm IK R/Arm IK R_end
-        weight: 0
-      - path: Armature/Main Controller/Elbow IK L
-        weight: 0
-      - path: Armature/Main Controller/Elbow IK L/Elbow IK L_end
-        weight: 0
-      - path: Armature/Main Controller/Elbow IK R
-        weight: 0
-      - path: Armature/Main Controller/Elbow IK R/Elbow IK R_end
-        weight: 0
-      - path: Armature/Main Controller/Hip
-        weight: 1
-      - path: Armature/Main Controller/Hip/Spine
-        weight: 1
-      - path: Armature/Main Controller/Hip/Spine/Chest
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head/Head_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Palm L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Palm L/Fingers L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Palm L/Fingers L/Fingers L_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Thumb L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Thumb L/Thumb Tip L
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
-          L/Wrist L/Thumb L/Thumb Tip L/Thumb Tip L_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Palm R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Palm R/Fingers R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Palm R/Fingers R/Fingers R_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Thumb R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Thumb R/Thumb Tip R
-        weight: 0
-      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
-          R/Wrist R/Thumb R/Thumb Tip R/Thumb Tip R_end
-        weight: 0
-      - path: Armature/Main Controller/Hip/Thigh L
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh L/Calf L
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L/Foot L_end
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R/Calf R
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R
-        weight: 1
-      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R/Foot R_end
-        weight: 1
-      - path: Armature/Main Controller/Knee IK L
-        weight: 1
-      - path: Armature/Main Controller/Knee IK L/Knee IK L_end
-        weight: 1
-      - path: Armature/Main Controller/Knee IK R
-        weight: 1
-      - path: Armature/Main Controller/Knee IK R/Knee IK R_end
-        weight: 1
-      - path: Armature/Main Controller/Leg IK L
-        weight: 1
-      - path: Armature/Main Controller/Leg IK L/Leg IK L_end
-        weight: 1
-      - path: Armature/Main Controller/Leg IK R
-        weight: 1
-      - path: Armature/Main Controller/Leg IK R/Leg IK R_end
-        weight: 1
-      - path: HeadMesh
-        weight: 0
-      - path: Left Bicep
-        weight: 0
-      - path: Left Calf
-        weight: 1
-      - path: Left Foot
-        weight: 1
-      - path: Left Forearm
-        weight: 0
-      - path: Left Hand
-        weight: 0
-      - path: Left Thigh
-        weight: 1
-      - path: NeckMesh
-        weight: 0
-      - path: Right Bicep
-        weight: 0
-      - path: Right Calf
-        weight: 1
-      - path: Right Foot
-        weight: 1
-      - path: Right Forearm
-        weight: 0
-      - path: Right Hand
-        weight: 0
-      - path: Right Thigh
-        weight: 1
-      - path: Torso
-        weight: 0
-      maskType: 1
-      maskSource: {fileID: 31900000, guid: 1323324594b794042bf29164e49706c1, type: 2}
-      additiveReferencePoseFrame: 0.96
-    - serializedVersion: 16
-      name: Armature|Crouching
-      takeName: Armature|Crouching
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 23
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 1
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
       heightFromFeet: 0
@@ -808,7 +244,385 @@ ModelImporter:
         weight: 0
       maskType: 1
       maskSource: {fileID: 31900000, guid: 1323324594b794042bf29164e49706c1, type: 2}
-      additiveReferencePoseFrame: 23
+      additiveReferencePoseFrame: 0.96
+    - serializedVersion: 16
+      name: Running
+      takeName: Armature|Running
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000000000001000000010000000000000000000000000000000000000001000000010000000000000000000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Abdomen
+        weight: 1
+      - path: Armature
+        weight: 0
+      - path: Armature/Main Controller
+        weight: 0
+      - path: Armature/Main Controller/Arm IK L
+        weight: 0
+      - path: Armature/Main Controller/Arm IK L/Arm IK L_end
+        weight: 0
+      - path: Armature/Main Controller/Arm IK R
+        weight: 0
+      - path: Armature/Main Controller/Arm IK R/Arm IK R_end
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK L
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK L/Elbow IK L_end
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK R
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK R/Elbow IK R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip
+        weight: 1
+      - path: Armature/Main Controller/Hip/Spine
+        weight: 1
+      - path: Armature/Main Controller/Hip/Spine/Chest
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head/Head_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L/Fingers L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L/Fingers L/Fingers L_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L/Thumb Tip L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L/Thumb Tip L/Thumb Tip L_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R/Fingers R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R/Fingers R/Fingers R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R/Thumb Tip R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R/Thumb Tip R/Thumb Tip R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Thigh L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L/Foot L_end
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R/Foot R_end
+        weight: 1
+      - path: Armature/Main Controller/Knee IK L
+        weight: 1
+      - path: Armature/Main Controller/Knee IK L/Knee IK L_end
+        weight: 1
+      - path: Armature/Main Controller/Knee IK R
+        weight: 1
+      - path: Armature/Main Controller/Knee IK R/Knee IK R_end
+        weight: 1
+      - path: Armature/Main Controller/Leg IK L
+        weight: 1
+      - path: Armature/Main Controller/Leg IK L/Leg IK L_end
+        weight: 1
+      - path: Armature/Main Controller/Leg IK R
+        weight: 1
+      - path: Armature/Main Controller/Leg IK R/Leg IK R_end
+        weight: 1
+      - path: HeadMesh
+        weight: 0
+      - path: Left Bicep
+        weight: 0
+      - path: Left Calf
+        weight: 1
+      - path: Left Foot
+        weight: 1
+      - path: Left Forearm
+        weight: 0
+      - path: Left Hand
+        weight: 0
+      - path: Left Thigh
+        weight: 1
+      - path: NeckMesh
+        weight: 0
+      - path: Right Bicep
+        weight: 0
+      - path: Right Calf
+        weight: 1
+      - path: Right Foot
+        weight: 1
+      - path: Right Forearm
+        weight: 0
+      - path: Right Hand
+        weight: 0
+      - path: Right Thigh
+        weight: 1
+      - path: Torso
+        weight: 0
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: 1323324594b794042bf29164e49706c1, type: 2}
+      additiveReferencePoseFrame: 0.96
+    - serializedVersion: 16
+      name: Idle
+      takeName: Armature|Idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000000000001000000010000000000000000000000000000000000000001000000010000000000000000000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Abdomen
+        weight: 1
+      - path: Armature
+        weight: 0
+      - path: Armature/Main Controller
+        weight: 0
+      - path: Armature/Main Controller/Arm IK L
+        weight: 0
+      - path: Armature/Main Controller/Arm IK L/Arm IK L_end
+        weight: 0
+      - path: Armature/Main Controller/Arm IK R
+        weight: 0
+      - path: Armature/Main Controller/Arm IK R/Arm IK R_end
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK L
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK L/Elbow IK L_end
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK R
+        weight: 0
+      - path: Armature/Main Controller/Elbow IK R/Elbow IK R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip
+        weight: 1
+      - path: Armature/Main Controller/Hip/Spine
+        weight: 1
+      - path: Armature/Main Controller/Hip/Spine/Chest
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Lower Neck/Neck/Head/Head_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L/Fingers L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Palm L/Fingers L/Fingers L_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L/Thumb Tip L
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder L/Bicep L/Forearm
+          L/Wrist L/Thumb L/Thumb Tip L/Thumb Tip L_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R/Fingers R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Palm R/Fingers R/Fingers R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R/Thumb Tip R
+        weight: 0
+      - path: Armature/Main Controller/Hip/Spine/Chest/Shoulder R/Bicep R/Forearm
+          R/Wrist R/Thumb R/Thumb Tip R/Thumb Tip R_end
+        weight: 0
+      - path: Armature/Main Controller/Hip/Thigh L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh L/Calf L/Ankle L/Foot L/Foot L_end
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R
+        weight: 1
+      - path: Armature/Main Controller/Hip/Thigh R/Calf R/Ankle R/Foot R/Foot R_end
+        weight: 1
+      - path: Armature/Main Controller/Knee IK L
+        weight: 1
+      - path: Armature/Main Controller/Knee IK L/Knee IK L_end
+        weight: 1
+      - path: Armature/Main Controller/Knee IK R
+        weight: 1
+      - path: Armature/Main Controller/Knee IK R/Knee IK R_end
+        weight: 1
+      - path: Armature/Main Controller/Leg IK L
+        weight: 1
+      - path: Armature/Main Controller/Leg IK L/Leg IK L_end
+        weight: 1
+      - path: Armature/Main Controller/Leg IK R
+        weight: 1
+      - path: Armature/Main Controller/Leg IK R/Leg IK R_end
+        weight: 1
+      - path: HeadMesh
+        weight: 0
+      - path: Left Bicep
+        weight: 0
+      - path: Left Calf
+        weight: 1
+      - path: Left Foot
+        weight: 1
+      - path: Left Forearm
+        weight: 0
+      - path: Left Hand
+        weight: 0
+      - path: Left Thigh
+        weight: 1
+      - path: NeckMesh
+        weight: 0
+      - path: Right Bicep
+        weight: 0
+      - path: Right Calf
+        weight: 1
+      - path: Right Foot
+        weight: 1
+      - path: Right Forearm
+        weight: 0
+      - path: Right Hand
+        weight: 0
+      - path: Right Thigh
+        weight: 1
+      - path: Torso
+        weight: 0
+      maskType: 1
+      maskSource: {fileID: 31900000, guid: 1323324594b794042bf29164e49706c1, type: 2}
+      additiveReferencePoseFrame: 0.96
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -826,14 +640,14 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    keepQuads: 0
+    keepQuads: 1
     weldVertices: 1
-    bakeAxisConversion: 0
+    bakeAxisConversion: 1
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
-    optimizeBones: 1
+    optimizeBones: 0
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -897,7 +711,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: Ankle L
+    - boneName: Foot L
       humanName: LeftFoot
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -905,7 +719,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: Ankle R
+    - boneName: Foot R
       humanName: RightFoot
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -929,24 +743,8 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: Neck
+    - boneName: Head
       humanName: Head
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Shoulder L
-      humanName: LeftShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Shoulder R
-      humanName: RightShoulder
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -1001,48 +799,8 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: Foot L
-      humanName: LeftToes
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Foot R
-      humanName: RightToes
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Fingers L
-      humanName: Left Ring Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Palm L
-      humanName: Left Ring Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
     - boneName: Thumb L
       humanName: Left Thumb Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Thumb Tip L
-      humanName: Left Thumb Intermediate
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -1065,23 +823,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: Palm R
-      humanName: Right Ring Proximal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Fingers R
-      humanName: Right Ring Intermediate
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Lower Neck
+    - boneName: Neck
       humanName: Neck
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -1089,8 +831,56 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: Head
-      humanName: RightEye
+    - boneName: Toes R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Toes L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Palm R
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Thumb Tip L
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Fingers R
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Palm L
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Fingers L
+      humanName: Left Index Intermediate
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -1103,355 +893,345 @@ ModelImporter:
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
+    - name: Abdomen
+      parentName: Character(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
     - name: Armature
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Main Controller
       parentName: Armature
-      position: {x: -2.134518e-16, y: 0.15263163, z: -0.8613014}
-      rotation: {x: 1, y: -4.622913e-24, z: 0.0000000754979, w: 6.123234e-17}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Arm IK L
-      parentName: Main Controller
-      position: {x: 0.7200002, y: 0.15263163, z: -1.4213014}
-      rotation: {x: 0.7071067, y: 0.7071068, z: 0.00000009415696, w: -0.00000009415697}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Arm IK L_end
-      parentName: Arm IK L
-      position: {x: -0, y: 0.04000001, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Arm IK R
-      parentName: Main Controller
-      position: {x: -0.71999973, y: 0.15263163, z: -1.4213016}
-      rotation: {x: -0.7071067, y: 0.7071068, z: 0.00000009415696, w: 0.00000009415697}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Arm IK R_end
-      parentName: Arm IK R
-      position: {x: -0, y: 0.04000001, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Elbow IK L
-      parentName: Main Controller
-      position: {x: 0.51505107, y: 0.41978893, z: -1.4086149}
-      rotation: {x: 6.123235e-17, y: 1, z: -6.123235e-17, w: 0.00000013315805}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Elbow IK L_end
-      parentName: Elbow IK L
-      position: {x: -0, y: 0.112801746, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Elbow IK R
-      parentName: Main Controller
-      position: {x: -0.5150507, y: 0.41978893, z: -1.408615}
-      rotation: {x: 6.123235e-17, y: 1, z: -6.123235e-17, w: 0.00000013315805}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Elbow IK R_end
-      parentName: Elbow IK R
-      position: {x: -0, y: 0.112801746, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 2.134518e-16, y: 0.15263163, z: -0.056488324}
+      rotation: {x: 6.123234e-17, y: -0, z: -1, w: -3.3087225e-24}
+      scale: {x: 1, y: 0.9999962, z: 0.9999962}
     - name: Hip
       parentName: Main Controller
-      position: {x: -0.0005284831, y: 0.14119832, z: -1.7118566}
-      rotation: {x: 0.0031408644, y: -0.6994935, z: 0.71463203, w: -0.00000007958582}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: -0.0005287416, y: 0.18307917, z: -0.7823972}
+      rotation: {x: -0.0000000059371814, y: -0.5549245, z: 0.8318972, w: -0.002438955}
+      scale: {x: 0.9999958, y: 1.000003, z: 1.0000032}
     - name: Spine
       parentName: Hip
-      position: {x: -8.440111e-11, y: 0.1804962, z: -8.5829016e-10}
-      rotation: {x: 0.015947469, y: 0.0028442254, z: 0.0031007684, w: 0.999864}
-      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+      position: {x: -8.1490724e-11, y: 0.1954478, z: -0.00000006818464}
+      rotation: {x: -0.36530828, y: 0.0030833497, z: -0.0030167408, w: 0.9308766}
+      scale: {x: 1, y: 1.000007, z: 0.9999989}
     - name: Chest
       parentName: Spine
-      position: {x: -2.0127159e-11, y: 0.14203201, z: 3.991843e-12}
-      rotation: {x: 0.031254243, y: -0.0006087233, z: -0.00091210264, w: 0.9995109}
-      scale: {x: 1, y: 1.0000001, z: 1}
-    - name: Lower Neck
-      parentName: Chest
-      position: {x: 7.771561e-16, y: 0.31507313, z: 7.771561e-17}
-      rotation: {x: -0.2220632, y: -5.855824e-11, z: 0.000000052171046, w: 0.97503227}
-      scale: {x: 1, y: 0.9999999, z: 1}
-    - name: Neck
-      parentName: Lower Neck
-      position: {x: -2.2022617e-15, y: 0.11170178, z: 0.00000000845236}
-      rotation: {x: 0.16525668, y: -1.3413973e-10, z: -0.00000003901571, w: 0.9862506}
-      scale: {x: 1, y: 1, z: 0.9999999}
-    - name: Head
-      parentName: Neck
-      position: {x: 2.6156377e-18, y: 0.1304543, z: 8.0295785e-17}
-      rotation: {x: 5.4279678e-17, y: -7.1054274e-15, z: -5.786082e-18, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Head_end
-      parentName: Head
-      position: {x: -0, y: 0.2851503, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Shoulder L
-      parentName: Chest
-      position: {x: 7.771561e-16, y: 0.31507313, z: 7.771561e-17}
-      rotation: {x: -0.024699321, y: -0.024699122, z: -0.7066752, w: 0.70667547}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: -3.921743e-10, y: 0.11855879, z: -0.00000001788132}
+      rotation: {x: 0.27525902, y: -0.0012314352, z: 0.0015123272, w: 0.96136814}
+      scale: {x: 1, y: 1, z: 0.99999934}
     - name: Bicep L
-      parentName: Shoulder L
-      position: {x: 0.00000002076095, y: 0.19853969, z: 6.5523764e-10}
-      rotation: {x: -0.016342994, y: -0.7054382, z: 0.013868838, w: 0.7084473}
-      scale: {x: 0.9999999, y: 0.9999998, z: 1}
+      parentName: Chest
+      position: {x: -0.2, y: 0.31830272, z: -0.0694984}
+      rotation: {x: -0.44033685, y: 0.4686225, z: -0.56482816, w: -0.51717085}
+      scale: {x: 1.0000238, y: 1.0000116, z: 0.9999925}
     - name: Forearm L
       parentName: Bicep L
-      position: {x: 0.0000000014901161, y: 0.31678453, z: -0.000000020489097}
-      rotation: {x: 0.0007654353, y: -0.010657906, z: 0.019473096, w: 0.99975336}
-      scale: {x: 0.9999997, y: 0.9999998, z: 1.0000002}
+      position: {x: -0.0000000052154063, y: 0.3405053, z: 0.00000010915101}
+      rotation: {x: 0.008154927, y: -0.011823085, z: 0.076603204, w: -0.99695826}
+      scale: {x: 0.9999986, y: 0.9999991, z: 1.000007}
     - name: Wrist L
       parentName: Forearm L
-      position: {x: -0.0000000014901161, y: 0.20623635, z: -0.000000011594966}
-      rotation: {x: -0.000304135, y: -0.014466715, z: -0.055473648, w: 0.9983553}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: -0.000000017881394, y: 0.25344035, z: 0.000000011920929}
+      rotation: {x: 0.01490071, y: -0.01253417, z: -0.005777765, w: 0.9997937}
+      scale: {x: 1.0000086, y: 1.0000085, z: 1.0000062}
     - name: Palm L
       parentName: Wrist L
-      position: {x: 4.973799e-15, y: 0.040000048, z: -0.000000019389336}
-      rotation: {x: -1.40477e-10, y: -0.0043146983, z: 0.000000021405587, w: 0.9999907}
-      scale: {x: 1, y: 1, z: 0.99999994}
+      position: {x: 0.0000000059604646, y: 0.054720607, z: -0.000000011920929}
+      rotation: {x: -0.024394613, y: 0.020025553, z: -0.011343574, w: 0.9994375}
+      scale: {x: 1.0000083, y: 1.0000093, z: 1.0000002}
     - name: Fingers L
       parentName: Palm L
-      position: {x: -6.94115e-11, y: 0.11180162, z: -0.00000003586923}
-      rotation: {x: 7.0740364e-10, y: 0.07721546, z: -0.0000000102863345, w: 0.9970144}
-      scale: {x: 1, y: 0.99999994, z: 1}
+      position: {x: 0, y: 0.07472968, z: -0.0000000029802323}
+      rotation: {x: 0.010118576, y: -0.0085867485, z: 0.021102307, w: 0.9996893}
+      scale: {x: 1.0000083, y: 1.0000126, z: 1.0000162}
     - name: Fingers L_end
       parentName: Fingers L
-      position: {x: -0, y: 0.077217296, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 0, y: 0.09003377, z: 0}
+      rotation: {x: -0.002895945, y: 0.0023839956, z: -0.64699197, w: 0.76248765}
+      scale: {x: 1.0000105, y: 0.99998397, z: 0.9999971}
     - name: Thumb L
       parentName: Wrist L
-      position: {x: 4.973799e-15, y: 0.040000048, z: -0.000000019389336}
-      rotation: {x: -0.00044728842, y: -0.0011900761, z: 0.46981063, w: 0.8827663}
-      scale: {x: 0.9999999, y: 1, z: 1}
+      position: {x: 0.0431842, y: 0.024267018, z: -0.0016940266}
+      rotation: {x: -0.015510362, y: 0.005039138, z: -0.33042204, w: 0.9436924}
+      scale: {x: 1.0000345, y: 0.9999686, z: 0.99999803}
     - name: Thumb Tip L
       parentName: Thumb L
-      position: {x: 0.000000013131649, y: 0.101158716, z: -0.000000026877387}
-      rotation: {x: -0.0022485333, y: -0.081586406, z: -0.027482165, w: 0.9962848}
-      scale: {x: 1, y: 0.9999999, z: 0.99999994}
+      position: {x: -0.000000017881394, y: 0.06930069, z: 0.000000023841858}
+      rotation: {x: -0.00012361255, y: 0.0009401876, z: 0.031145856, w: 0.9995144}
+      scale: {x: 0.99994725, y: 1.0000645, z: 1.000002}
     - name: Thumb Tip L_end
       parentName: Thumb Tip L
-      position: {x: -0, y: 0.07915689, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Shoulder R
+      position: {x: 0, y: 0.072736345, z: 0}
+      rotation: {x: -0.0039506583, y: 0.0020789418, z: -0.5665675, w: 0.8240033}
+      scale: {x: 0.9999446, y: 1.0000514, z: 0.9999978}
+    - name: Neck
       parentName: Chest
-      position: {x: 7.771561e-16, y: 0.31507313, z: 7.771561e-17}
-      rotation: {x: 0.010181313, y: -0.010181056, z: 0.70703334, w: 0.70703363}
-      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+      position: {x: 0.0000000012516935, y: 0.3952953, z: -0.12614112}
+      rotation: {x: 0.015170453, y: -0.0000000010477378, z: -2.3283062e-10, w: 0.9998849}
+      scale: {x: 1, y: 1.0000023, z: 0.99999523}
+    - name: Head
+      parentName: Neck
+      position: {x: -1.1940643e-16, y: 0.17166595, z: 0.00000002159497}
+      rotation: {x: -0.11692082, y: 6.517121e-10, z: -8.2039836e-10, w: 0.99314123}
+      scale: {x: 1, y: 0.9999799, z: 1.0000212}
+    - name: Head_end
+      parentName: Head
+      position: {x: 0, y: 0.21547985, z: 0}
+      rotation: {x: 0.7071068, y: -0.0000000033276881, z: 0.0000000041476507, w: 0.7071067}
+      scale: {x: 1, y: 0.9999996, z: 0.9999968}
     - name: Bicep R
-      parentName: Shoulder R
-      position: {x: 0.000000015528611, y: 0.19853978, z: -0.000000012673508}
-      rotation: {x: -0.01570022, y: 0.75630814, z: -0.013532077, w: 0.65388715}
-      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000002}
+      parentName: Chest
+      position: {x: 0.19853978, y: 0.31149212, z: -0.06898}
+      rotation: {x: -0.42807344, y: -0.4641351, z: 0.5700515, w: -0.52571195}
+      scale: {x: 1.0000267, y: 1.0000049, z: 0.99998707}
     - name: Forearm R
       parentName: Bicep R
-      position: {x: -0.000000008894131, y: 0.31676692, z: 0.000000021352026}
-      rotation: {x: 0.0014721937, y: 0.068804204, z: -0.020024441, w: 0.9974282}
-      scale: {x: 1.0000004, y: 0.9999997, z: 1.0000002}
+      position: {x: -0.00000003576279, y: 0.341807, z: -0.00000009536743}
+      rotation: {x: 0.00003939867, y: 0.000085502856, z: -0.077286184, w: -0.9970089}
+      scale: {x: 1.0000027, y: 1.0000125, z: 1.0000119}
     - name: Wrist R
       parentName: Forearm R
-      position: {x: 0.0000000070490045, y: 0.20628357, z: -0.00000012021431}
-      rotation: {x: -0.003960825, y: -0.06889615, z: 0.056385815, w: 0.9960212}
-      scale: {x: 0.99999994, y: 1, z: 1}
+      position: {x: 0.000000017881394, y: 0.25351402, z: -0.000000007450581}
+      rotation: {x: 0.013178115, y: 0.0110740345, z: -0.0013211785, w: 0.999851}
+      scale: {x: 1.0000064, y: 1.000006, z: 1.0000057}
     - name: Palm R
       parentName: Wrist R
-      position: {x: 1.4210855e-15, y: 0.04000002, z: 0.000000019389281}
-      rotation: {x: -6.0762884e-10, y: -0.03456311, z: -0.000000017569635, w: 0.9994025}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 0.000000011920929, y: 0.058681812, z: -0.000000020861625}
+      rotation: {x: -0.024029417, y: -0.01972222, z: 0.023400253, w: 0.9992427}
+      scale: {x: 1.0000122, y: 0.99999815, z: 1.0000011}
     - name: Fingers R
       parentName: Palm R
-      position: {x: 3.61662e-10, y: 0.111800686, z: -0.000000013805755}
-      rotation: {x: 0.0000000014939077, y: -0.07721564, z: 0.000000010128993, w: 0.9970144}
-      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+      position: {x: 0.00000003576279, y: 0.07079416, z: -0.0000000029802323}
+      rotation: {x: 0.010630779, y: 0.0090217255, z: -0.026911331, w: 0.99954057}
+      scale: {x: 0.99999326, y: 1.0000087, z: 1.0000012}
     - name: Fingers R_end
       parentName: Fingers R
-      position: {x: -0, y: 0.077217296, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 0, y: 0.09003385, z: 0}
+      rotation: {x: 0.000046583824, y: 0.000037999824, z: 0.6470291, w: 0.7624654}
+      scale: {x: 1.0000228, y: 0.9999787, z: 1.0000088}
     - name: Thumb R
       parentName: Wrist R
-      position: {x: 1.4210855e-15, y: 0.04000002, z: 0.000000019389281}
-      rotation: {x: -0.023847489, y: 0.031716496, z: -0.46340847, w: 0.8852559}
-      scale: {x: 1, y: 1.0000001, z: 1}
+      position: {x: -0.043486804, y: 0.023728129, z: -0.0015841633}
+      rotation: {x: -0.014369565, y: -0.0047348505, z: 0.32872084, w: 0.944306}
+      scale: {x: 1.0000722, y: 0.99993813, z: 1.0000064}
     - name: Thumb Tip R
       parentName: Thumb R
-      position: {x: 0.0000000834465, y: 0.1004838, z: -0.00000006631017}
-      rotation: {x: 0.0004591233, y: 0.01656684, z: 0.027674438, w: 0.9994796}
-      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999998}
+      position: {x: -0.000000047683717, y: 0.06828429, z: 0.000000017881394}
+      rotation: {x: -0.00013068128, y: -0.0009530439, z: -0.03144893, w: 0.999505}
+      scale: {x: 0.99994546, y: 1.0000633, z: 1.0000036}
     - name: Thumb Tip R_end
       parentName: Thumb Tip R
-      position: {x: -0, y: 0.0791569, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 0, y: 0.07246042, z: 0}
+      rotation: {x: -0.0007889681, y: 0.000033585347, z: 0.5681802, w: 0.8229039}
+      scale: {x: 0.9997783, y: 1.0002304, z: 1.0000132}
     - name: Thigh L
       parentName: Hip
-      position: {x: 0.10041868, y: 0.035923462, z: 0.0102251945}
-      rotation: {x: 0.033012275, y: -0.024911273, z: 0.99913967, w: -0.0031016243}
-      scale: {x: 0.99999994, y: 0.9999992, z: 1.0000043}
+      position: {x: -0.10416988, y: 0.059774783, z: 0.04339843}
+      rotation: {x: 0.96742916, y: -0.0017603134, z: -0.001653148, w: 0.25313032}
+      scale: {x: 1, y: 1.0000094, z: 0.9999977}
     - name: Calf L
       parentName: Thigh L
-      position: {x: 0.0000000085681675, y: 0.41104752, z: -0.000000009685755}
-      rotation: {x: 0.07967622, y: -0.017886277, z: -0.006776945, w: 0.9966373}
-      scale: {x: 0.99999964, y: 0.9999997, z: 0.9999999}
-    - name: Ankle L
-      parentName: Calf L
-      position: {x: -0.000000006101725, y: 0.3310755, z: 0.0000000039758787}
-      rotation: {x: -0.23873687, y: 0.04418593, z: 0.012608776, w: 0.9699966}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: -0.00000000987202, y: 0.43939754, z: -0.0000000108499085}
+      rotation: {x: 0.12588441, y: -0.0004287057, z: -0.00043615163, w: 0.99204475}
+      scale: {x: 1, y: 1.0000134, z: 1.00002}
     - name: Foot L
-      parentName: Ankle L
-      position: {x: 0.0000000044470654, y: 0.13020946, z: 0.00000001504086}
-      rotation: {x: -0.0017215012, y: 0.83186054, z: -0.5549761, w: -0.0025803666}
-      scale: {x: 1, y: 1.0000002, z: 1}
-    - name: Foot L_end
+      parentName: Calf L
+      position: {x: 0.0000000037252903, y: 0.3291344, z: -0.000000016391278}
+      rotation: {x: -0.53588355, y: 0.0001045813, z: 0.0003540719, w: 0.84429187}
+      scale: {x: 1, y: 0.9999538, z: 1.0000352}
+    - name: Toes L
       parentName: Foot L
-      position: {x: -0, y: 0.14999987, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 0.00000000594265, y: 0.14911143, z: 0}
+      rotation: {x: -0.28333846, y: 0.0000000022118911, z: -0.000000019971228, w: 0.95902}
+      scale: {x: 1.0000004, y: 1.0000755, z: 0.999946}
+    - name: Toes L_end
+      parentName: Toes L
+      position: {x: 0, y: 0.11147274, z: 0}
+      rotation: {x: 0.0000007152557, y: 0.0000003213678, z: 0.000033173692, w: 1}
+      scale: {x: 1.0000026, y: 1.0000018, z: 0.99999994}
     - name: Thigh R
       parentName: Hip
-      position: {x: -0.09957727, y: 0.035044726, z: 0.011123028}
-      rotation: {x: -0.02841725, y: -0.02505091, z: 0.9992815, w: -0.0011764272}
-      scale: {x: 0.99999976, y: 1.0000002, z: 1.0000046}
+      position: {x: 0.10382759, y: 0.05893084, z: 0.04283541}
+      rotation: {x: 0.96742827, y: -0.001480269, z: -0.001992772, w: 0.2531334}
+      scale: {x: 1, y: 1.0000111, z: 1.0000076}
     - name: Calf R
       parentName: Thigh R
-      position: {x: -0.000000010430813, y: 0.4110479, z: -0.0000000052154063}
-      rotation: {x: 0.07969631, y: 0.017886579, z: 0.0067787184, w: 0.9966357}
-      scale: {x: 1.0000002, y: 1, z: 1}
-    - name: Ankle R
-      parentName: Calf R
-      position: {x: -0.000000005626488, y: 0.3310758, z: -0.000000004681806}
-      rotation: {x: -0.23874816, y: -0.044186518, z: -0.012609435, w: 0.96999377}
-      scale: {x: 0.99999994, y: 1, z: 1}
+      position: {x: -0.000000014994294, y: 0.4393985, z: 0.00000001527369}
+      rotation: {x: 0.12589446, y: 0.000428774, z: 0.0004362692, w: 0.9920435}
+      scale: {x: 1, y: 1.0000241, z: 1.000025}
     - name: Foot R
-      parentName: Ankle R
-      position: {x: -0.0000000033993275, y: 0.13020945, z: -0.0000000056810676}
-      rotation: {x: -0.55496746, y: 0.00000014205825, z: -0.0034425654, w: 0.83186495}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Foot R_end
+      parentName: Calf R
+      position: {x: 0.000000004959293, y: 0.32913497, z: -0.0000000063329937}
+      rotation: {x: -0.5358883, y: -0.00013488827, z: -0.0003677442, w: 0.8442888}
+      scale: {x: 1, y: 0.99999636, z: 1.0000129}
+    - name: Toes R
       parentName: Foot R
-      position: {x: -0, y: 0.14999995, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 0.0000000029802323, y: 0.14911143, z: -0.0000000029802323}
+      rotation: {x: -0.28333828, y: 0.00000000779255, z: -0.000000021963386, w: 0.95902}
+      scale: {x: 1, y: 1.0000182, z: 0.99999493}
+    - name: Toes R_end
+      parentName: Toes R
+      position: {x: 0, y: 0.11147281, z: 0}
+      rotation: {x: 0.00000032782552, y: 0.000000002353994, z: 2.241469e-10, w: 1}
+      scale: {x: 1, y: 1.0000091, z: 1.0000113}
+    - name: Arm IK L
+      parentName: Main Controller
+      position: {x: 0.26888523, y: 0.09612191, z: -0.81895685}
+      rotation: {x: -4.05202e-40, y: 6.617445e-24, z: 6.617445e-24, w: 1}
+      scale: {x: 0.4163897, y: 0.9999962, z: 0.9999962}
+    - name: Arm IK L_end
+      parentName: Arm IK L
+      position: {x: 0, y: 0.19999999, z: 0}
+      rotation: {x: -6.123235e-17, y: -0, z: 1, w: 3.3087225e-24}
+      scale: {x: 1, y: 0.9999962, z: 0.9999962}
+    - name: Arm IK R
+      parentName: Main Controller
+      position: {x: -0.26888523, y: 0.0961219, z: -0.8189568}
+      rotation: {x: -4.05202e-40, y: 6.617445e-24, z: 6.617445e-24, w: 1}
+      scale: {x: 0.4163897, y: 0.9999962, z: 0.9999962}
+    - name: Arm IK R_end
+      parentName: Arm IK R
+      position: {x: 0, y: 0.2, z: 0}
+      rotation: {x: -6.123235e-17, y: -0, z: 1, w: 3.3087225e-24}
+      scale: {x: 1, y: 0.9999962, z: 0.9999962}
+    - name: Elbow IK R
+      parentName: Main Controller
+      position: {x: -0.5364381, y: 0.8986805, z: -1.3967121}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.9999962, z: 0.9999962}
+    - name: Elbow IK R_end
+      parentName: Elbow IK R
+      position: {x: 0, y: 0.19066416, z: 0}
+      rotation: {x: -6.123234e-17, y: -2.53251e-40, z: 1, w: 8.27181e-25}
+      scale: {x: 1, y: 0.9999962, z: 0.9999962}
+    - name: Elbow IK L
+      parentName: Main Controller
+      position: {x: 0.536437, y: 0.89824295, z: -1.3962806}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.9999962, z: 0.9999962}
+    - name: Elbow IK L_end
+      parentName: Elbow IK L
+      position: {x: 0, y: 0.1906642, z: 0}
+      rotation: {x: -6.123234e-17, y: -2.53251e-40, z: 1, w: 8.27181e-25}
+      scale: {x: 1, y: 0.9999962, z: 0.9999962}
     - name: Knee IK L
       parentName: Main Controller
-      position: {x: 0.09854853, y: -0.2212132, z: -0.4180026}
-      rotation: {x: 1, y: -4.622913e-24, z: 0.0000000754979, w: 6.123234e-17}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 0.10415989, y: -0.4948469, z: -1.0225661}
+      rotation: {x: -0.00000007549491, y: 0.008910537, z: 0.9999603, w: -6.727312e-10}
+      scale: {x: 1, y: 1, z: 1.0000001}
     - name: Knee IK L_end
       parentName: Knee IK L
-      position: {x: -0, y: 0.08137732, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 0, y: 0.16786805, z: 0}
+      rotation: {x: -0.008910537, y: -0.00000007549491, z: -6.7273126e-10, w: 0.9999603}
+      scale: {x: 1, y: 0.9999927, z: 0.9999926}
     - name: Knee IK R
       parentName: Main Controller
-      position: {x: -0.098548405, y: -0.2212132, z: -0.4180026}
-      rotation: {x: 1, y: -4.622913e-24, z: 0.0000000754979, w: 6.123234e-17}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: -0.104159944, y: -0.4948506, z: -1.0225658}
+      rotation: {x: -0.00000007549491, y: 0.008910537, z: 0.9999603, w: -6.727312e-10}
+      scale: {x: 1, y: 1, z: 1.0000001}
     - name: Knee IK R_end
       parentName: Knee IK R
-      position: {x: -0, y: 0.08137732, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 0, y: 0.1678681, z: 0}
+      rotation: {x: -0.008910537, y: -0.00000007549491, z: -6.727314e-10, w: 0.9999603}
+      scale: {x: 1, y: 0.9999927, z: 0.9999926}
     - name: Leg IK L
       parentName: Main Controller
-      position: {x: 0.10000002, y: 0.15263163, z: -0.0815276}
-      rotation: {x: 0.0025802732, y: 0.5549755, z: 0.8318609, w: 0.001721543}
-      scale: {x: 0.99999994, y: 0.9999996, z: 0.99999976}
+      position: {x: 0.13220523, y: 0.063266605, z: -0.061783828}
+      rotation: {x: -5.702706e-25, y: -9.494107e-16, z: 0.000000009313226, w: 1}
+      scale: {x: 1.2712041, y: 0.9999963, z: 0.99999624}
     - name: Leg IK L_end
       parentName: Leg IK L
-      position: {x: -0, y: 0.1302088, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 0, y: 0.2, z: 0}
+      rotation: {x: 2.220446e-15, y: -2.0679515e-23, z: 1, w: -8.881784e-16}
+      scale: {x: 1.0000001, y: 0.9999964, z: 0.99999815}
     - name: Leg IK R
       parentName: Main Controller
-      position: {x: -0.09999999, y: 0.15263163, z: -0.08152744}
-      rotation: {x: -0.0025803794, y: 0.5549753, z: 0.8318611, w: -0.0017214728}
-      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+      position: {x: -0.12712315, y: 0.1792454, z: -0.061783638}
+      rotation: {x: 7.346841e-39, y: -2.281679e-15, z: 3.3087225e-24, w: 1}
+      scale: {x: 1.271204, y: 0.9999962, z: 0.9999962}
     - name: Leg IK R_end
       parentName: Leg IK R
-      position: {x: -0, y: 0.13020866, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
+      position: {x: 0, y: 0.2, z: 0}
+      rotation: {x: 4.440893e-15, y: -0, z: 1, w: 0}
+      scale: {x: 1.0000004, y: 0.9999964, z: 0.99999654}
     - name: HeadMesh
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Left Bicep
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Left Calf
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Left Foot
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Left Forearm
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Left Hand
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Left Thigh
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: NeckMesh
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Right Bicep
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Right Calf
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Right Foot
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Right Forearm
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Right Hand
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Right Thigh
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Torso
       parentName: Character(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
