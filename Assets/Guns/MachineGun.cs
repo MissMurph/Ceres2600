@@ -43,11 +43,11 @@ namespace Ceres.Guns {
 		protected virtual void FireRay (Action<Vector3, BodyPart> callback) {
 			Debug.DrawRay(muzzlePos.position, transform.forward * 100f, Color.yellow, 1f);
 
-			if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit) && hit.collider.gameObject.TryGetComponent(out BodyPart limb)) {
+			if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit) && hit.collider.transform.parent.TryGetComponent(out BodyPart limb)) {
 				callback(hit.point, limb);
 			}
 		}
-
+		 
 		protected virtual void Awake () {
 			fireDelay = 1f / fireRate;
 			cooldownTimer = fireDelay;

@@ -42,8 +42,8 @@ namespace Ceres.Entities {
 			}
 		}
 
-		[Header("Avatar")]
-		[SerializeField] private Body avatar;
+		//[Header("Avatar")]
+		private Body avatar;
 
 		public Body Avatar {
 			get {
@@ -53,6 +53,8 @@ namespace Ceres.Entities {
 
 		private void Awake () {
 			avatar = GetComponent<Body>();
+
+			currentHealth = maxHealth;
 
 			if (Cache.Initialized) {
 				int id = Cache.Register(this);
