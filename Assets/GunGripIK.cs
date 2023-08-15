@@ -28,6 +28,9 @@ public class GunGripIK : MonoBehaviour {
 
 			pose.SetIKPosition(AvatarIKGoal.LeftHand, forwardGrip.position);
 			pose.SetIKRotation(AvatarIKGoal.LeftHand, forwardGrip.rotation);
+
+			pose.SetLookAtWeight(1);
+			pose.SetLookAtPosition(forwardGrip.position + forwardGrip.forward * 5f);
 		}
 		else {
 			pose.SetIKPositionWeight(AvatarIKGoal.RightHand, 0);
