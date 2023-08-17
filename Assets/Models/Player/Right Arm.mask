@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Right Arm
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 0
+  - m_Path: Armature/Main Controller
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Bicep L
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Bicep L/Forearm L
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Bicep L/Forearm L/Hand L
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Bicep L/Forearm L/Hand L/Palm L
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Bicep L/Forearm L/Hand L/Palm L/Fingers L
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Bicep L/Forearm L/Hand L/Palm L/Fingers L/Fingers
+      L_end
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Bicep L/Forearm L/Hand L/Thumb L
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Bicep L/Forearm L/Hand L/Thumb L/Thumb Tip L
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Bicep L/Forearm L/Hand L/Thumb L/Thumb Tip L/Thumb
+      Tip L_end
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Bicep R
+    m_Weight: 1
+  - m_Path: Armature/Main Controller/Bicep R/Forearm R
+    m_Weight: 1
+  - m_Path: Armature/Main Controller/Bicep R/Forearm R/Hand R
+    m_Weight: 1
+  - m_Path: Armature/Main Controller/Bicep R/Forearm R/Hand R/Palm R
+    m_Weight: 1
+  - m_Path: Armature/Main Controller/Bicep R/Forearm R/Hand R/Palm R/Fingers R
+    m_Weight: 1
+  - m_Path: Armature/Main Controller/Bicep R/Forearm R/Hand R/Palm R/Fingers R/Fingers
+      R_end
+    m_Weight: 1
+  - m_Path: Armature/Main Controller/Bicep R/Forearm R/Hand R/Thumb R
+    m_Weight: 1
+  - m_Path: Armature/Main Controller/Bicep R/Forearm R/Hand R/Thumb R/Thumb Tip R
+    m_Weight: 1
+  - m_Path: Armature/Main Controller/Bicep R/Forearm R/Hand R/Thumb R/Thumb Tip R/Thumb
+      Tip R_end
+    m_Weight: 1
+  - m_Path: Armature/Main Controller/Elbow IK L
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Elbow IK L/Elbow IK L_end
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Elbow IK R
+    m_Weight: 1
+  - m_Path: Armature/Main Controller/Elbow IK R/Elbow IK R_end
+    m_Weight: 1
+  - m_Path: Armature/Main Controller/Hand IK L
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Hand IK L/Hand IK L_end
+    m_Weight: 0
+  - m_Path: Armature/Main Controller/Hand IK R
+    m_Weight: 1
+  - m_Path: Armature/Main Controller/Hand IK R/Hand IK R_end
+    m_Weight: 1
+  - m_Path: Left Bicep
+    m_Weight: 0
+  - m_Path: Left Forearm
+    m_Weight: 0
+  - m_Path: Left Hand
+    m_Weight: 0
+  - m_Path: Right Bicep
+    m_Weight: 1
+  - m_Path: Right Forearm
+    m_Weight: 1
+  - m_Path: Right Hand
+    m_Weight: 1

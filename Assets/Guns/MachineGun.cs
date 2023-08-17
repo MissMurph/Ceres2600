@@ -40,6 +40,9 @@ namespace Ceres.Guns {
 		[SerializeField]
 		private Transform muzzlePos;
 
+		[SerializeField]
+		private Animator animSource;
+
 		protected virtual void FireRay (Action<Vector3, BodyPart> callback) {
 			Debug.DrawRay(muzzlePos.position, transform.forward * 100f, Color.yellow, 1f);
 
@@ -75,7 +78,10 @@ namespace Ceres.Guns {
 
 		public void OnReload (InputAction.CallbackContext context) {
 			if (context.performed) {
-
+				if (animSource != null) animSource.SetBool("down", true);
+			}
+			else if (context.canceled) {
+				if (animSource != null) animSource.SetBool("down", false);
 			}
 		}
 
