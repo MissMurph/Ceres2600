@@ -98,6 +98,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AssaultRifle Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 6b627f3efc1ef6e48be657ee9155c1e2, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b627f3efc1ef6e48be657ee9155c1e2, type: 3}
 --- !u!1 &7173261576306204808 stripped
@@ -125,6 +129,7 @@ MonoBehaviour:
   CurrentAmmo: 30
   ReloadTime: 5
   muzzlePos: {fileID: 3478870314973707747}
+  animSource: {fileID: 0}
 --- !u!4 &7969413309037831070 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -9091384898949349817, guid: 6b627f3efc1ef6e48be657ee9155c1e2, type: 3}
