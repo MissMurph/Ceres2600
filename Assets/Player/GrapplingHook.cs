@@ -55,19 +55,19 @@ namespace Ceres.Player {
 			grappleProgress = distanceToAnchor / initialDistance;
 
 			/*if (distance < distanceToAnchor) {
-				//float velocity = physics.velocity.magnitude;
+				float velocity = physics.velocity.magnitude;
 				Vector3 newDirection = Vector3.ProjectOnPlane(physics.velocity, grappleDirection);
 				//physics.velocity = newDirection.normalized * velocity;
-				//physics.AddForce(newDirection.normalized * grappleAcceleration, ForceMode.Acceleration);
+				physics.AddForce(newDirection.normalized * grappleAcceleration, ForceMode.Acceleration);
 			}
 			else physics.AddForce(grappleDirection.normalized * grappleAcceleration, ForceMode.Acceleration);*/
 
-			if (grappleProgress <= gravityCancelThreshold) {
+			/*if (grappleProgress <= gravityCancelThreshold) {
 				physics.useGravity = false;
 			}
 			else {
 				physics.useGravity = true;
-			}
+			}*/
 
 			if (grappleProgress <= grappleEndThreshold) {
 				EndGrapple();
