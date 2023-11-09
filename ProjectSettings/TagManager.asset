@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Giblet
   layers:
   - Default
   - TransparentFX
@@ -17,11 +18,11 @@ TagManager:
   - 
   - Player
   - World
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Entities
+  - Ragdolls
+  - Giblets
+  - Overlay
+  - Body
   - 
   - 
   - 
